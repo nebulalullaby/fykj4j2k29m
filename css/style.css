@@ -138,10 +138,6 @@ p {
   transform: translateY(-5px) !important;
   box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
 }
-.avatar {
-  width: 90px; height: 90px; border-radius: 50%;
-  margin: 0 auto 20px auto; border: 2px solid white; display: block;
-}
 
 /* 預購表單專屬：溫柔 Baby Pink */
 .special-btn {
@@ -189,15 +185,23 @@ p {
 
 /* 讓小圓圈內的圖片自動置中並調整大小 */
 .social-icon-img {
-    width: 20px;  /* 調整圖標大小，18px-22px 最精緻 */
-    height: 20px;
-    object-fit: contain; /* 確保圖片不變形 */
-    /* 2026年小撇步：如果圖標太黑，可以用 filter 把它變灰藍色配合品牌 */
-    filter: opacity(0.7); 
+    width: 22px !important;  /* 稍微調大一點點 */
+    height: 22px !important;
+    object-fit: contain; 
+    display: block;
+    margin: auto;
+    
+    /* 核心修復：將白色圖標轉化為高級灰藍色 (#64748B) */
+    /* 這樣即便背景是白的，圖標也會清晰可見 */
+    filter: invert(48%) sepia(13%) saturate(553%) hue-rotate(176deg) brightness(94%) contrast(91%) opacity(0.8) !important;
+    
+    transition: all 0.3s ease;
 }
 
 .social-circle:hover .social-icon-img {
-    filter: opacity(1); /* 碰觸時圖片顏色變亮 */
+    /* 碰觸時稍微加亮 */
+    filter: invert(48%) sepia(13%) saturate(553%) hue-rotate(176deg) brightness(110%) contrast(100%) opacity(1) !important;
+    transform: scale(1.1);
 }
 
 /* 確保原本的預購按鈕不受影響 */
