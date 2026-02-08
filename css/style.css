@@ -91,7 +91,7 @@ body::before {
 h1 {
   font-size: 24px !important;
   font-weight: 600 !important;
-  color: #005AB5 !important; 
+  color: #4B4453 !important; 
   letter-spacing: 3px !important;
   margin-top: 25px !important;
   margin-bottom: 8px !important;
@@ -101,7 +101,7 @@ h1 {
 
 p {
   font-size: 13px !important;
-  color: #005AB5 !important;
+  color: #6d6d6d !important;
   letter-spacing: 1.5px !important;
   margin-bottom: 35px !important;
   text-align: center;
@@ -232,14 +232,14 @@ p {
 .copyright {
     margin-bottom: 1px !important;
     font-size: 11px !important;
-    color: #FFFFFF !important; /* 您選的高級灰藍 */
+    color: #CBD5E1 !important; /* 您選的高級灰藍 */
     letter-spacing: 1.5px !important;
 }
 
 .privacy-link {
     margin-top: 3px !important;
     font-size: 10px !important;
-    color: #FFFFFF !important; /* #64748B */
+    color: #CBD5E1 !important; /* #64748B */
     text-decoration: none !important;
     letter-spacing: 1px;
     opacity: 0.8; /* 稍微半透明，讓它更低調 */
