@@ -107,7 +107,7 @@ p {
   text-align: center;
 }
 
-/* 4. 按鈕：維持你最滿意的 Lit.link 膠囊形狀與 Baby 配色 */
+/* 1. 按鈕基礎設定：純白 0.4 透明度 */
 .button {
   display: flex !important;
   align-items: center;
@@ -121,36 +121,42 @@ p {
   font-size: 13px !important;
   letter-spacing: 2px !important;
   font-weight: 600 !important;
-  color: #4a4a4a !important;
   
-  /* 平時：Baby Blue */
-  background: rgba(225, 240, 255, 0.4) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  /* 妳要求的白色 0.4 透明度 */
+  background: rgba(255, 255, 255, 0.4) !important; 
+  /* 文字改回妳的高級深紫色，在白色底上才清晰 */
+  color: #4B4453 !important; 
+  
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 5. 反白效果：Baby Pink 浮起 */
+/* 2. 按鈕反白：純白 0.9 透明度 */
 .button:hover {
   filter: none !important;
   text-decoration: none !important;
-  background: rgba(252, 236, 242, 0.9) !important; 
-  color: #4B4453 !important;
+  
+  /* 妳要求的白色 0.9 透明度 */
+  background: rgba(255, 255, 255, 0.9) !important; 
+  color: #4B4453 !important; 
+  
   transform: translateY(-5px) !important;
-  box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3) !important;
 }
 
-/* 預購表單專屬：溫柔 Baby Pink */
+/* 3. 預購表單 (Special-btn) 同步改為白色系 */
 .special-btn {
-    /* 提高藍色飽和度 (B: 255) 與不透明度 (0.7) */
-    background: rgba(180, 225, 255, 0.3) !important; 
-    border: 1.5px solid rgba(255, 255, 255, 0.4) !important; /* 強化白色邊框增加存在感 */
-    color: #e6f5ff !important; /* 深石板藍文字 */
+    background: rgba(255, 255, 255, 0.5) !important; /* 稍微厚一點點以區分 */
+    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+    color: #4B4453 !important;
 }
 
-.special-btn:hover {
-    background: rgba(153, 214, 255, 0.4) !important;   /* rgba(150, 210, 255, 0.65) */
-    color: #ffffff !important;
-    box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
+/* 4. 社交圖標：也要改回深色，否則在 0.9 的白底上會看不見 */
+.social-icon-img {
+    width: 20px !important;
+    height: 20px !important;
+    /* 濾鏡改為深紫色 (#4B4453) */
+    filter: invert(27%) sepia(11%) saturate(1038%) hue-rotate(226deg) brightness(92%) contrast(88%) opacity(0.8) !important;
 }
 
 /* 社交媒體橫排小圓區 */
@@ -181,28 +187,6 @@ p {
     background: rgba(252, 236, 242, 0.8) !important; /* 碰觸變 Baby Pink */
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(252, 182, 193, 0.3);
-}
-
-/* 讓小圓圈內的圖片自動置中並調整大小 */
-.social-icon-img {
-    /* 1. 強制指定寬度，防止 SVG 在某些瀏覽器變成 0 像素 */
-    width: 22px !important;
-    height: 22px !important;
-    min-width: 22px !important;
-    min-height: 22px !important;
-    
-    display: block !important;
-    margin: auto !important;
-    object-fit: contain !important;
-
-    /* 2. 顏色濾鏡：強制讓白色 SVG 轉為深紫色 (#4B4453) 以增加對比 */
-    filter: invert(27%) sepia(11%) saturate(1038%) hue-rotate(226deg) brightness(92%) contrast(88%) !important;
-    
-    /* 3. 確保層級在最前面 */
-    position: relative !important;
-    z-index: 10 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
 }
 
 .social-circle:hover .social-icon-img {
