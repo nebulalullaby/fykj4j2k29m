@@ -1,11 +1,11 @@
 /* -------------------------------------------
-   1. 全域背景與佈局
+   1. 網頁背景圖層 (處理固定星空效果)
    ------------------------------------------- */
 body {
   margin: 0;
-  padding: 80px 0 !important; /* [可改] 上下留白空間，數值愈大網頁愈長 */
+  padding: 80px 0 !important; /* [可改] 網頁頂部與底部的留白距離 */
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fcecfc; /* [可改] 圖片未加載前的底色 */
+  background-color: #fcecfc; 
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,107 +14,108 @@ body {
 
 body::before {
     content: "";
-    position: fixed; /* 背景固定不動 */
+    position: fixed; /* 讓背景圖片固定，不隨網頁捲動 */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/IMG_9097.PNG') no-repeat center center; /* [可改] 背景圖片路徑 */
+    background: url('../images/IMG_9097.PNG') no-repeat center center; /* [可改] 背景圖路徑 */
     background-size: cover;
     z-index: -1; 
-    -webkit-transform: translateZ(0); /* iOS 渲染優化 */
+    -webkit-transform: translateZ(0); /* 修復 iOS 背景閃爍 Bug */
     transform: translateZ(0);
 }
 
 /* -------------------------------------------
-   2. 背景板 (玻璃容器)
+   2. 冰晶背景板 (中央白色半透明容器)
    ------------------------------------------- */
 .container {
-  width: 92%; /* [可改] 手機版佔螢幕寬度 */
-  max-width: 400px; /* [可改] 電腦版最大寬度 */
-  min-height: 520px; /* [可改] 最小高度 */
+  width: 92%; /* 手機版佔比 */
+  max-width: 400px; /* 電腦版最大寬度 */
+  min-height: 520px;
   padding: 50px 24px;
   
-  /* 透明度：0.12 代表 12% 的白，數值愈小愈清透 */
-  background: rgba(255, 255, 255, 0.12) !important; 
+  /* [可改] 0.12 代表 12% 透明白，數值愈小愈透明 */
+  background: rgba(255, 255, 255, 0.12) !important;
   
-  backdrop-filter: none !important; /* 關閉模糊以維持 Safari 一致性 */
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important; /* [可改] 邊框粗細與白度 */
-  border-radius: 45px; /* [可改] 容器圓角大小 */
+  backdrop-filter: none !important; /* 確保 Safari 顯示清透不發灰 */
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important; /* 板子邊框顏色與粗細 */
+  border-radius: 45px; /* [可改] 板子的圓角弧度 */
   
-  /* 內發光與外陰影 */
+  /* 內發光效果 (inset) 與外陰影 */
   box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 
               0 15px 35px rgba(0, 0, 0, 0.03) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  margin: 20px auto !important; /* 上下外邊距 */
+  margin: 20px auto !important;
 }
 
 /* -------------------------------------------
-   3. 品牌 Logo (Avatar)
+   3. 品牌大圖示 (Logo)
    ------------------------------------------- */
 .avatar {
   width: 150px !important; /* [可改] Logo 寬度 */
   height: auto !important; 
-  border-radius: 0 !important; /* 0 為原圖形狀，50% 為正圓 */
+  border-radius: 0 !important; /* 0 代表維持原圖形狀 */
   border: none !important;
   display: block;
-  margin: 0 auto 40px auto; /* 底部 40px 是與下方文字的距離 */
+  margin: 0 auto 30px auto; 
   
-  /* [可改] Logo 下方的白色光暈 */
+  /* Logo 下方的輕微發光效果 */
   filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
+  margin-bottom: 40px !important; /* 與下方文字的間距 */
 }
 
 /* -------------------------------------------
-   4. 標題與簡介文字
+   4. 文字標題與描述
    ------------------------------------------- */
 h1 {
-  font-size: 24px !important; /* [可改] 標題大小 */
+  font-size: 24px !important; /* [可改] 標題字體大小 */
   font-weight: 600 !important;
-  color: #4B4453 !important; /* [可改] 標題顏色：高級深紫 */
-  letter-spacing: 3px !important; /* 字距 */
+  color: #4B4453 !important; /* [可改] 高級深紫色 */
+  letter-spacing: 3px !important; /* 字與字之間的間距 */
   margin-top: 25px !important;
   margin-bottom: 8px !important;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* 文字白色發光 */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* 淡淡的白色光暈 */
   text-align: center;
 }
 
 p {
-  font-size: 13px !important; /* [可改] 簡介大小 */
-  color: #6d6d6d !important; /* [可改] 簡介顏色：深灰 */
+  font-size: 13px !important; /* [可改] 描述文字大小 */
+  color: #6d6d6d !important; /* [可改] 描述文字顏色 */
   letter-spacing: 1.5px !important;
-  margin-bottom: 35px !important; /* 距離按鈕的距離 */
+  margin-bottom: 35px !important; /* 距離下方按鈕的距離 */
   text-align: center;
 }
 
 /* -------------------------------------------
-   5. 標準按鈕 (膠囊狀)
+   5. 標準膠囊按鈕 (一般連結)
    ------------------------------------------- */
 .button {
   display: flex !important;
   align-items: center;
   justify-content: center;
   width: 100% !important;
-  padding: 22px 20px !important; /* 按鈕高度感 (上下 22px) */
-  margin-bottom: 30px !important; /* [可改] 按鈕與按鈕之間的距離 */
-  border-radius: 60px !important; /* [可改] 按鈕圓角 (60px 為半圓) */
+  padding: 22px 20px !important; /* [可改] 按鈕的高度感 */
+  margin-bottom: 30px !important; /* [可改] 按鈕與按鈕之間的垂直間距 */
+  border-radius: 60px !important; /* 膠囊狀圓角 */
   text-align: center !important;
   text-decoration: none !important;
-  font-size: 13px !important; /* 按鈕文字大小 */
+  font-size: 13px !important;
   letter-spacing: 2px !important;
   font-weight: 600 !important;
   color: #4a4a4a !important;
   
-  /* 平時狀態：Baby Blue 0.4 透明度 */
+  /* 平常狀態：Baby Blue 0.4 透明 */
   background: rgba(225, 240, 255, 0.4) !important; 
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* 動態平滑效果 */
 }
 
 .button:hover {
-  /* 反白狀態：Baby Pink 0.9 透明度 */
+  /* 滑鼠移上去：變為 Baby Pink 0.9 透明 */
   background: rgba(252, 236, 242, 0.9) !important; 
   color: #4B4453 !important;
   transform: translateY(-5px) !important; /* [可改] 向上浮起的距離 */
@@ -122,29 +123,29 @@ p {
 }
 
 /* -------------------------------------------
-   6. 特殊按鈕 (預購表單專用)
+   6. 特別強調按鈕 (如預購表單)
    ------------------------------------------- */
 .special-btn {
-    /* 平時：透明藍 0.3 */
+    /* 平常狀態：淺藍色 0.3 透明 */
     background: rgba(180, 225, 255, 0.3) !important; 
     border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
     color: #e6f5ff !important;
 }
 
 .special-btn:hover {
-    /* 反白：較濃的藍色 0.4 */
+    /* 滑鼠移上去：加深的藍色 0.4 透明 */
     background: rgba(153, 214, 255, 0.4) !important;
     color: #ffffff !important;
     box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
 /* -------------------------------------------
-   7. 社交媒體小圓按鈕 (純白系)
+   7. 社交媒體橫排圓形圖示
    ------------------------------------------- */
 .social-icons-row {
     display: flex;
     justify-content: center;
-    gap: 15px; /* [可改] 圓圈之間的距離 */
+    gap: 15px; /* [可改] 圓圈與圓圈之間的左右距離 */
     margin-bottom: 30px;
 }
 
@@ -154,17 +155,19 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50% !important;
+    border-radius: 50% !important; /* 正圓形 */
     
-    /* 顏色：白色 0.4 透明度 */
+    /* 圓圈背景：純白色 0.4 透明 */
     background: rgba(255, 255, 255, 0.4) !important;
     border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+    
+    text-decoration: none;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
 .social-circle:hover {
-    /* 反白：白色 0.8 透明度 */
+    /* 滑鼠移上去：背景變為白色 0.8 透明 */
     background: rgba(255, 255, 255, 0.8) !important;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
@@ -172,36 +175,37 @@ p {
 }
 
 .social-icon-img {
-    width: 20px !important; /* [可改] 圖標圖案大小 */
+    width: 20px !important; /* [可改] 圖案大小 */
     height: 20px !important;
     object-fit: contain !important;
     
-    /* [不可動] 強制將圖標轉為白色的濾鏡 */
+    /* 強制讓所有圖標變為純白色 */
     filter: brightness(0) invert(1) opacity(0.7) !important; 
     transition: all 0.3s ease;
 }
 
 .social-circle:hover .social-icon-img {
-    filter: brightness(0) invert(1) opacity(1) !important; /* 反白時全亮 */
+    filter: brightness(0) invert(1) opacity(1) !important; /* 反白時全白亮度 */
+    transform: scale(1.1);
 }
 
 /* -------------------------------------------
-   8. 頁尾資訊 (Copyright / Privacy)
+   8. 頁尾版權與連結
    ------------------------------------------- */
 .footer {
-    margin-top: 50px; /* 與上方按鈕的留白 */
+    margin-top: 50px; /* 與上方按鈕區的距離 */
     padding-bottom: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0px; /* 兩行文字的間距 */
+    gap: 0px; /* 控制兩行字之間的上下距離 */
 }
 
 .copyright {
     margin-bottom: 1px !important;
     font-size: 11px !important;
-    color: #CBD5E1 !important; /* [可改] 版權字顏色：高級灰藍 */
+    color: #CBD5E1 !important; /* [可改] 高級灰藍色 */
     letter-spacing: 1.5px !important;
 }
 
@@ -214,21 +218,25 @@ p {
     opacity: 0.8;
 }
 
+.privacy-link:hover {
+    color: #4B4453 !important; /* 滑過時變回深紫色 */
+}
+
 /* -------------------------------------------
-   9. Collection 相簿頁面佈局
+   9. Collection 相簿頁面專屬佈局
    ------------------------------------------- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* [可改] 固定 2 列，若要 3 列改為 1fr 1fr 1fr */
-    gap: 20px; /* 圖片間距 */
+    grid-template-columns: 1fr 1fr; /* 固定 2 行排列 */
+    gap: 20px; /* [可改] 圖片與圖片之間的距離 */
     width: 100%;
 }
 
 .img-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1; /* [可改] 強制正方形 (1/1) */
+    aspect-ratio: 1 / 1; /* [可改] 強制正方形比例 (1:1) */
     overflow: hidden;
-    border-radius: 20px; /* 圖片圓角 */
+    border-radius: 20px; /* [可改] 圖片圓角 */
     border: 1.5px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
@@ -236,17 +244,17 @@ p {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* 圖片自動裁切填滿，不變形 */
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* 滑過時放大 1.1 倍 */
+    transform: scale(1.1); /* 滑過時輕微放大 10% */
 }
 
 .gallery-item span {
     display: block;
-    font-size: 11px;
+    font-size: 11px; /* [可改] 作品名稱字體大小 */
     color: #64748B;
     margin-top: 10px;
     letter-spacing: 1px;
