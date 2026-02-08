@@ -185,17 +185,24 @@ p {
 
 /* 讓小圓圈內的圖片自動置中並調整大小 */
 .social-icon-img {
-    width: 22px !important;  /* 稍微調大一點點 */
+    /* 1. 強制指定寬度，防止 SVG 在某些瀏覽器變成 0 像素 */
+    width: 22px !important;
     height: 22px !important;
-    object-fit: contain; 
-    display: block;
-    margin: auto;
+    min-width: 22px !important;
+    min-height: 22px !important;
     
-    /* 核心修復：將白色圖標轉化為高級灰藍色 (#64748B) */
-    /* 這樣即便背景是白的，圖標也會清晰可見 */
-    filter: invert(48%) sepia(13%) saturate(553%) hue-rotate(176deg) brightness(94%) contrast(91%) opacity(0.8) !important;
+    display: block !important;
+    margin: auto !important;
+    object-fit: contain !important;
+
+    /* 2. 顏色濾鏡：強制讓白色 SVG 轉為深紫色 (#4B4453) 以增加對比 */
+    filter: invert(27%) sepia(11%) saturate(1038%) hue-rotate(226deg) brightness(92%) contrast(88%) !important;
     
-    transition: all 0.3s ease;
+    /* 3. 確保層級在最前面 */
+    position: relative !important;
+    z-index: 10 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .social-circle:hover .social-icon-img {
