@@ -1,9 +1,11 @@
-/* 1. 背景設定：回歸最穩定的 fixed 模式 */
+/* -------------------------------------------
+   1. 全域背景與佈局
+   ------------------------------------------- */
 body {
   margin: 0;
-  padding: 80px 0 !important; 
+  padding: 80px 0 !important; /* [可改] 上下留白空間，數值愈大網頁愈長 */
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fcecfc;
+  background-color: #fcecfc; /* [可改] 圖片未加載前的底色 */
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -12,256 +14,221 @@ body {
 
 body::before {
     content: "";
-    position: fixed; /* 強制在螢幕固定 */
+    position: fixed; /* 背景固定不動 */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* 這裡放妳的背景圖 */
-    background: url('../images/IMG_9097.PNG') no-repeat center center;
+    background: url('../images/IMG_9097.PNG') no-repeat center center; /* [可改] 背景圖片路徑 */
     background-size: cover;
-    z-index: -1; /* 確保它在所有東西的下面 */
-    
-    /* 針對 iOS 渲染優化 */
-    -webkit-transform: translateZ(0);
+    z-index: -1; 
+    -webkit-transform: translateZ(0); /* iOS 渲染優化 */
     transform: translateZ(0);
 }
 
-/* 2. 背景板：採用你之前成功的「無模糊純透視」方案 */
+/* -------------------------------------------
+   2. 背景板 (玻璃容器)
+   ------------------------------------------- */
 .container {
-  width: 92%;
-  max-width: 400px;
-  min-height: 520px;
+  width: 92%; /* [可改] 手機版佔螢幕寬度 */
+  max-width: 400px; /* [可改] 電腦版最大寬度 */
+  min-height: 520px; /* [可改] 最小高度 */
   padding: 50px 24px;
   
-  /* 關鍵：不使用 blur，改用極透的 0.12 白色，確保 Safari 內外一致 */
-  background: rgba(255, 255, 255, 0.12) !important;
+  /* 透明度：0.12 代表 12% 的白，數值愈小愈清透 */
+  background: rgba(255, 255, 255, 0.12) !important; 
   
-  /* 移除模糊，避免 Safari 產生色差 */
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important; /* 關閉模糊以維持 Safari 一致性 */
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important; /* [可改] 邊框粗細與白度 */
+  border-radius: 45px; /* [可改] 容器圓角大小 */
   
-  /* 強化邊框與內部柔光來模擬玻璃質感 */
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 45px;
-  
-  /* 增加內部發光 (inset) 讓透明板子有厚度感 */
+  /* 內發光與外陰影 */
   box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 
               0 15px 35px rgba(0, 0, 0, 0.03) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
-  margin: 20px auto !important;
+  margin: 20px auto !important; /* 上下外邊距 */
 }
 
+/* -------------------------------------------
+   3. 品牌 Logo (Avatar)
+   ------------------------------------------- */
 .avatar {
-  /* 1. 調整寬度，大圖示建議設在 120px - 180px 之間 */
-  width: 150px !important; 
-  height: auto !important; /* 讓高度自動比例縮放，不會變形 */
-  
-  /* 2. 移除強制圓形（如果妳的 Logo 是不規則或長方形的） */
-  border-radius: 0 !important; 
-  
-  /* 3. 移除原本的白色邊框（除非妳覺得好看） */
+  width: 150px !important; /* [可改] Logo 寬度 */
+  height: auto !important; 
+  border-radius: 0 !important; /* 0 為原圖形狀，50% 為正圓 */
   border: none !important;
-  
-  /* 4. 確保圖示居中 */
   display: block;
-  margin: 0 auto 30px auto; 
+  margin: 0 auto 40px auto; /* 底部 40px 是與下方文字的距離 */
   
-  /* 5. 加入一點點懸浮的陰影感，呼應玻璃風格 */
+  /* [可改] Logo 下方的白色光暈 */
   filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
-  
-  /* 6. 呼吸動畫 (選用)：讓 Logo 輕微上下漂浮 */
-  /* animation: float 4s ease-in-out infinite; */
-
-  margin-bottom: 40px !important; /* 加大間距，讓排版不擁擠 */
 }
 
-/* 漂浮動畫代碼 */
-/* @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-} */
-
-/* 3. 標題：深紫色 + 呼吸感 */
+/* -------------------------------------------
+   4. 標題與簡介文字
+   ------------------------------------------- */
 h1 {
-  font-size: 24px !important;
+  font-size: 24px !important; /* [可改] 標題大小 */
   font-weight: 600 !important;
-  color: #4B4453 !important; 
-  letter-spacing: 3px !important;
+  color: #4B4453 !important; /* [可改] 標題顏色：高級深紫 */
+  letter-spacing: 3px !important; /* 字距 */
   margin-top: 25px !important;
   margin-bottom: 8px !important;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* 文字白色發光 */
   text-align: center;
 }
 
 p {
-  font-size: 13px !important;
-  color: #6d6d6d !important;
+  font-size: 13px !important; /* [可改] 簡介大小 */
+  color: #6d6d6d !important; /* [可改] 簡介顏色：深灰 */
   letter-spacing: 1.5px !important;
-  margin-bottom: 35px !important;
+  margin-bottom: 35px !important; /* 距離按鈕的距離 */
   text-align: center;
 }
 
-/* 4. 按鈕：維持你最滿意的 Lit.link 膠囊形狀與 Baby 配色 */
+/* -------------------------------------------
+   5. 標準按鈕 (膠囊狀)
+   ------------------------------------------- */
 .button {
   display: flex !important;
   align-items: center;
   justify-content: center;
   width: 100% !important;
-  padding: 22px 20px !important; 
-  margin-bottom: 30px !important;
-  border-radius: 60px !important; 
+  padding: 22px 20px !important; /* 按鈕高度感 (上下 22px) */
+  margin-bottom: 30px !important; /* [可改] 按鈕與按鈕之間的距離 */
+  border-radius: 60px !important; /* [可改] 按鈕圓角 (60px 為半圓) */
   text-align: center !important;
   text-decoration: none !important;
-  font-size: 13px !important;
+  font-size: 13px !important; /* 按鈕文字大小 */
   letter-spacing: 2px !important;
   font-weight: 600 !important;
   color: #4a4a4a !important;
   
-  /* 平時：Baby Blue */
+  /* 平時狀態：Baby Blue 0.4 透明度 */
   background: rgba(225, 240, 255, 0.4) !important; 
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 5. 反白效果：Baby Pink 浮起 */
 .button:hover {
-  filter: none !important;
-  text-decoration: none !important;
+  /* 反白狀態：Baby Pink 0.9 透明度 */
   background: rgba(252, 236, 242, 0.9) !important; 
   color: #4B4453 !important;
-  transform: translateY(-5px) !important;
+  transform: translateY(-5px) !important; /* [可改] 向上浮起的距離 */
   box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
 }
 
-/* 預購表單專屬：溫柔 Baby Pink */
+/* -------------------------------------------
+   6. 特殊按鈕 (預購表單專用)
+   ------------------------------------------- */
 .special-btn {
-    /* 提高藍色飽和度 (B: 255) 與不透明度 (0.7) */
+    /* 平時：透明藍 0.3 */
     background: rgba(180, 225, 255, 0.3) !important; 
-    border: 1.5px solid rgba(255, 255, 255, 0.4) !important; /* 強化白色邊框增加存在感 */
-    color: #e6f5ff !important; /* 深石板藍文字 */
+    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+    color: #e6f5ff !important;
 }
 
 .special-btn:hover {
-    background: rgba(153, 214, 255, 0.4) !important;   /* rgba(150, 210, 255, 0.65) */
+    /* 反白：較濃的藍色 0.4 */
+    background: rgba(153, 214, 255, 0.4) !important;
     color: #ffffff !important;
     box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
-/* 社交媒體橫排小圓區 */
+/* -------------------------------------------
+   7. 社交媒體小圓按鈕 (純白系)
+   ------------------------------------------- */
 .social-icons-row {
     display: flex;
     justify-content: center;
-    gap: 15px; /* 小圓圈之間的距離 */
-    margin-bottom: 30px; /* 與下方版權字體的距離 */
+    gap: 15px; /* [可改] 圓圈之間的距離 */
+    margin-bottom: 30px;
 }
 
-/* 1. 社交媒體小圓圈：平時狀態 */
 .social-circle {
-    width: 40px;
+    width: 40px; /* [可改] 圓圈大小 */
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50% !important;
     
-    /* 妳要求的：背景白色，透明度 0.4 */
+    /* 顏色：白色 0.4 透明度 */
     background: rgba(255, 255, 255, 0.4) !important;
-    
-    /* 強化白色邊框，確保在星雲中能勾勒出圓形輪廓 */
     border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
-    
-    text-decoration: none;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
-/* 2. 小圓圈內的圖標：平時狀態 */
-.social-icon-img {
-    width: 20px !important;
-    height: 20px !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: auto !important;
-
-    /* 妳要求的：圖標是白色 (透過亮度濾鏡強制變白) */
-    /* 平時稍微半透明 (0.7)，增加高級感 */
-    filter: brightness(0) invert(1) opacity(0.7) !important;
-    
-    transition: all 0.3s ease;
-}
-
-/* 3. 社交媒體小圓圈：反白狀態 */
 .social-circle:hover {
-    /* 妳要求的：背景白色，透明度 0.8 */
+    /* 反白：白色 0.8 透明度 */
     background: rgba(255, 255, 255, 0.8) !important;
-    
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
     border: 1.5px solid rgba(255, 255, 255, 1) !important;
 }
 
-/* 4. 小圓圈內的圖標：反白狀態 */
+.social-icon-img {
+    width: 20px !important; /* [可改] 圖標圖案大小 */
+    height: 20px !important;
+    object-fit: contain !important;
+    
+    /* [不可動] 強制將圖標轉為白色的濾鏡 */
+    filter: brightness(0) invert(1) opacity(0.7) !important; 
+    transition: all 0.3s ease;
+}
+
 .social-circle:hover .social-icon-img {
-    /* 反白時圖標變全白 (1.0)，讓它更亮眼 */
-    filter: brightness(0) invert(1) opacity(1) !important;
-    transform: scale(1.1);
+    filter: brightness(0) invert(1) opacity(1) !important; /* 反白時全亮 */
 }
 
-/* 確保原本的預購按鈕不受影響 */
-.special-btn {
-    /* 這裡維持你之前的設定，它會保持長條膠囊狀 */
-}
-
-/* 頁尾高級感美化 */
+/* -------------------------------------------
+   8. 頁尾資訊 (Copyright / Privacy)
+   ------------------------------------------- */
 .footer {
-    margin-top: 50px; /* 增加間距，讓畫面底部更空靈 */
+    margin-top: 50px; /* 與上方按鈕的留白 */
     padding-bottom: 10px;
     text-align: center;
     display: flex;
-    flex-direction: column; /* 強制分行 */
+    flex-direction: column;
     align-items: center;
-    gap: 0px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
+    gap: 0px; /* 兩行文字的間距 */
 }
 
 .copyright {
     margin-bottom: 1px !important;
     font-size: 11px !important;
-    color: #CBD5E1 !important; /* 您選的高級灰藍 */
+    color: #CBD5E1 !important; /* [可改] 版權字顏色：高級灰藍 */
     letter-spacing: 1.5px !important;
 }
 
 .privacy-link {
     margin-top: 3px !important;
     font-size: 10px !important;
-    color: #CBD5E1 !important; /* #64748B */
+    color: #CBD5E1 !important;
     text-decoration: none !important;
     letter-spacing: 1px;
-    opacity: 0.8; /* 稍微半透明，讓它更低調 */
+    opacity: 0.8;
 }
 
-.privacy-link:hover {
-    color: #4B4453 !important; /* 滑過時變深紫色 */
-}
-
-/* Collection 頁面專屬樣式 */
+/* -------------------------------------------
+   9. Collection 相簿頁面佈局
+   ------------------------------------------- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 固定兩列，手機看最舒服 */
-    gap: 20px;
+    grid-template-columns: 1fr 1fr; /* [可改] 固定 2 列，若要 3 列改為 1fr 1fr 1fr */
+    gap: 20px; /* 圖片間距 */
     width: 100%;
 }
 
 .img-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 強制圖片成正方形，整齊美觀 */
+    aspect-ratio: 1 / 1; /* [可改] 強制正方形 (1/1) */
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 20px; /* 圖片圓角 */
     border: 1.5px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
@@ -269,12 +236,12 @@ p {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 圖片自動填充，不變形 */
+    object-fit: cover;
     transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* 輕微放大效果 */
+    transform: scale(1.1); /* 滑過時放大 1.1 倍 */
 }
 
 .gallery-item span {
@@ -285,4 +252,3 @@ p {
     letter-spacing: 1px;
     font-weight: 500;
 }
-
