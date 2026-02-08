@@ -91,7 +91,7 @@ body::before {
 h1 {
   font-size: 24px !important;
   font-weight: 600 !important;
-  color: #4B4453 !important; 
+  color: #005AB5 !important; 
   letter-spacing: 3px !important;
   margin-top: 25px !important;
   margin-bottom: 8px !important;
@@ -101,7 +101,7 @@ h1 {
 
 p {
   font-size: 13px !important;
-  color: #D2E9FF !important;
+  color: #005AB5 !important;
   letter-spacing: 1.5px !important;
   margin-bottom: 35px !important;
   text-align: center;
