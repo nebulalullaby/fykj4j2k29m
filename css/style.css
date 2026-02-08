@@ -107,7 +107,7 @@ p {
   text-align: center;
 }
 
-/* 1. 按鈕基礎設定：純白 0.4 透明度 */
+/* 4. 按鈕：維持你最滿意的 Lit.link 膠囊形狀與 Baby 配色 */
 .button {
   display: flex !important;
   align-items: center;
@@ -121,42 +121,36 @@ p {
   font-size: 13px !important;
   letter-spacing: 2px !important;
   font-weight: 600 !important;
+  color: #4a4a4a !important;
   
-  /* 妳要求的白色 0.4 透明度 */
-  background: rgba(255, 255, 255, 0.4) !important; 
-  /* 文字改回妳的高級深紫色，在白色底上才清晰 */
-  color: #4B4453 !important; 
-  
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  /* 平時：Baby Blue */
+  background: rgba(225, 240, 255, 0.4) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 2. 按鈕反白：純白 0.9 透明度 */
+/* 5. 反白效果：Baby Pink 浮起 */
 .button:hover {
   filter: none !important;
   text-decoration: none !important;
-  
-  /* 妳要求的白色 0.9 透明度 */
-  background: rgba(255, 255, 255, 0.9) !important; 
-  color: #4B4453 !important; 
-  
+  background: rgba(252, 236, 242, 0.9) !important; 
+  color: #4B4453 !important;
   transform: translateY(-5px) !important;
-  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
 }
 
-/* 3. 預購表單 (Special-btn) 同步改為白色系 */
+/* 預購表單專屬：溫柔 Baby Pink */
 .special-btn {
-    background: rgba(255, 255, 255, 0.5) !important; /* 稍微厚一點點以區分 */
-    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
-    color: #4B4453 !important;
+    /* 提高藍色飽和度 (B: 255) 與不透明度 (0.7) */
+    background: rgba(180, 225, 255, 0.3) !important; 
+    border: 1.5px solid rgba(255, 255, 255, 0.4) !important; /* 強化白色邊框增加存在感 */
+    color: #e6f5ff !important; /* 深石板藍文字 */
 }
 
-/* 4. 社交圖標：也要改回深色，否則在 0.9 的白底上會看不見 */
-.social-icon-img {
-    width: 20px !important;
-    height: 20px !important;
-    /* 濾鏡改為深紫色 (#4B4453) */
-    filter: invert(27%) sepia(11%) saturate(1038%) hue-rotate(226deg) brightness(92%) contrast(88%) opacity(0.8) !important;
+.special-btn:hover {
+    background: rgba(153, 214, 255, 0.4) !important;   /* rgba(150, 210, 255, 0.65) */
+    color: #ffffff !important;
+    box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
 /* 社交媒體橫排小圓區 */
@@ -167,31 +161,55 @@ p {
     margin-bottom: 30px; /* 與下方版權字體的距離 */
 }
 
+/* 1. 社交媒體小圓圈：平時狀態 */
 .social-circle {
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50% !important; /* 變成正圓形 */
-    background: rgba(255, 255, 255, 0.15) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    color: #64748B !important; /* 跟隨你的高級灰藍色 */
+    border-radius: 50% !important;
+    
+    /* 妳要求的：背景白色，透明度 0.4 */
+    background: rgba(255, 255, 255, 0.4) !important;
+    
+    /* 強化白色邊框，確保在星雲中能勾勒出圓形輪廓 */
+    border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+    
     text-decoration: none;
-    font-size: 18px;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
-.social-circle:hover {
-    background: rgba(252, 236, 242, 0.8) !important; /* 碰觸變 Baby Pink */
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(252, 182, 193, 0.3);
+/* 2. 小圓圈內的圖標：平時狀態 */
+.social-icon-img {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: auto !important;
+
+    /* 妳要求的：圖標是白色 (透過亮度濾鏡強制變白) */
+    /* 平時稍微半透明 (0.7)，增加高級感 */
+    filter: brightness(0) invert(1) opacity(0.7) !important;
+    
+    transition: all 0.3s ease;
 }
 
+/* 3. 社交媒體小圓圈：反白狀態 */
+.social-circle:hover {
+    /* 妳要求的：背景白色，透明度 0.8 */
+    background: rgba(255, 255, 255, 0.8) !important;
+    
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 1) !important;
+}
+
+/* 4. 小圓圈內的圖標：反白狀態 */
 .social-circle:hover .social-icon-img {
-    /* 碰觸時稍微加亮 */
-    filter: invert(48%) sepia(13%) saturate(553%) hue-rotate(176deg) brightness(110%) contrast(100%) opacity(1) !important;
+    /* 反白時圖標變全白 (1.0)，讓它更亮眼 */
+    filter: brightness(0) invert(1) opacity(1) !important;
     transform: scale(1.1);
 }
 
