@@ -43,4 +43,14 @@
         </footer>
     </div>
 </body>
+    
+<!-- 1. 引入燈箱的樣式與功能 (放在 </body> 之前) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net">
+<script src="https://cdn.jsdelivr.net"></script>
+
+<script>
+  // 2. 啟動魔法：讓所有 class 為 "zoom-img" 的圖片都能點擊放大
+  new LuminousGallery(document.querySelectorAll(".zoom-img"));
+</script>
+    
 </html>
