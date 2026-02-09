@@ -339,7 +339,7 @@ p {
 
 .year-section {
     /* 原本可能是 25px，我們調大一點 */
-    margin-bottom: 25px !important; 
+    margin-bottom: 15px !important; 
     width: 100%;
 }
 
