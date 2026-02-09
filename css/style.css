@@ -337,6 +337,12 @@ p {
     -webkit-appearance: none;
 }
 
+.year-section {
+    /* 原本可能是 25px，我們調大一點 */
+    margin-bottom: 50px !important; 
+    width: 100%;
+}
+
 /* 3. 箭頭修飾：讓箭頭也跟隨顏色 */
 .arrow {
     font-size: 16px;
@@ -368,5 +374,6 @@ p {
     max-height: 0;
     opacity: 0;
     margin-bottom: 0;
+    display: none !important;
 }
 
