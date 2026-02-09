@@ -1,7 +1,6 @@
 /* 1. 背景設定：回歸最穩定的 fixed 模式 */
 body {
   margin: 0;
-  padding: 80px 0 !important; 
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #fcecfc;
   min-height: 100vh;
@@ -59,9 +58,6 @@ body::before {
 
   /* 確保 margin 不會因為 flex 居中而變動 */
   margin: 0 auto !important;
-  
-  /* 關鍵：讓內部的元素有能力分配空間 */
-  justify-content: flex-start; 
 }
 
 .avatar {
@@ -161,15 +157,14 @@ p {
     box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
-/* 社交媒體橫排小圓區 */
+/* --- 社交媒體與頁尾 --- */
 .social-icons-row {
     display: flex;
     justify-content: center;
-    gap: 15px; /* 小圓圈之間的距離 */
-    margin-bottom: 30px; /* 與下方版權字體的距離 */
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-/* 1. 社交媒體小圓圈：平時狀態 */
 .social-circle {
     width: 40px;
     height: 40px;
@@ -177,211 +172,128 @@ p {
     align-items: center;
     justify-content: center;
     border-radius: 50% !important;
-    
-    /* 妳要求的：背景白色，透明度 0.4 */
     background: rgba(255, 255, 255, 0.4) !important;
-    
-    /* 強化白色邊框，確保在星雲中能勾勒出圓形輪廓 */
     border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
-    
-    text-decoration: none;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
-/* 2. 小圓圈內的圖標：平時狀態 */
 .social-icon-img {
     width: 20px !important;
     height: 20px !important;
     object-fit: contain !important;
-    display: block !important;
-    margin: auto !important;
-
-    /* 妳要求的：圖標是白色 (透過亮度濾鏡強制變白) */
-    /* 平時稍微半透明 (0.7)，增加高級感 */
     filter: brightness(0) invert(1) opacity(0.7) !important;
-    
     transition: all 0.3s ease;
 }
 
-/* 3. 社交媒體小圓圈：反白狀態 */
 .social-circle:hover {
-    /* 妳要求的：背景白色，透明度 0.8 */
     background: rgba(255, 255, 255, 0.8) !important;
-    
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
-    border: 1.5px solid rgba(255, 255, 255, 1) !important;
 }
 
-/* 4. 小圓圈內的圖標：反白狀態 */
 .social-circle:hover .social-icon-img {
-    /* 反白時圖標變全白 (1.0)，讓它更亮眼 */
     filter: brightness(0) invert(1) opacity(1) !important;
-    transform: scale(1.1);
 }
 
-/* 確保原本的預購按鈕不受影響 */
-.special-btn {
-    /* 這裡維持你之前的設定，它會保持長條膠囊狀 */
-}
-
-/* 頁尾高級感美化 */
 .footer {
-    margin-top: auto !important; /* 核心：自動推到最下面，不管上面有沒有收合 */
-    padding-top: 40px; /* 與上方內容保持最小安全距離 */
+    margin-top: auto !important;
+    padding-top: 40px;
     padding-bottom: 20px;
     text-align: center;
     display: flex;
-    flex-direction: column; /* 強制分行 */
+    flex-direction: column;
     align-items: center;
-    gap: 0px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
 }
 
-.copyright {
-    margin-bottom: 1px !important;
+.copyright, .privacy-link {
     font-size: 11px !important;
-    color: #F3F3FA !important; /* 您選的高級灰藍 */
+    color: #F3F3FA !important;
     letter-spacing: 1.5px !important;
+    text-decoration: none;
 }
 
-.privacy-link {
-    margin-top: 3px !important;
-    font-size: 10px !important;
-    color: #F3F3FA !important; /* #64748B */
-    text-decoration: none !important;
-    letter-spacing: 1px;
-    opacity: 0.8; /* 稍微半透明，讓它更低調 */
-}
-
-.privacy-link:hover {
-    color: #4B4453 !important; /* 滑過時變深紫色 */
-}
-
-/* Collection 頁面專屬樣式 */
+/* --- Collection 與燈箱 --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 固定兩列，手機看最舒服 */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    width: 100%;
 }
 
 .img-wrapper {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 強制圖片成正方形，整齊美觀 */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 20px;
     border: 1.5px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 圖片自動填充，不變形 */
-    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* 輕微放大效果 */
+    transform: scale(1.1);
 }
 
+/* 統一作品標題設定 */
 .gallery-item span {
     display: block;
     font-size: 11px;
-    color: #7373B9 !important; /* 同步修改為薰衣草藍紫色 */
-    margin-top: 10px;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-
-/* 燈箱背景變暗的濃度調得高級一點 */
-.lum-lightbox {
-    background: rgba(0, 0, 0, 0.6) !important;
-    backdrop-filter: blur(5px); /* 背景順便模糊，超美！ */
-}
-
-/* 讓彈出的大圖帶有一點點圓角 */
-.lum-img {
-    border-radius: 15px !important;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
-
-/* 1. 年份標題條：平時、點擊、收起全狀態鎖定顏色 */
-.year-toggle, 
-.year-toggle:focus, 
-.year-toggle:active {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between; /* 讓文字靠左，箭頭靠右 */
-    width: 100% !important;
-    padding: 22px 25px !important; /* 複製首頁 22px 的厚度 */
-    margin-bottom: 30px !important; /* 複製首頁 30px 的間距 */
-    border-radius: 60px !important; /* 複製首頁 60px 的極致圓角 */
-    
-    font-size: 13px !important; /* 複製首頁字體大小 */
-    letter-spacing: 2px !important;
-    font-weight: 600 !important;
-    
-    /* 文字顏色：改為妳要的薰衣草紫色 */
-    color: #e6f5ff !important; 
-    
-    /* 平時狀態：Baby Blue 0.4 透明 */
-    background: rgba(180, 225, 255, 0.3) !important; 
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    outline: none !important;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-/* 當年份被打開時，按鈕呈現水藍色 (0.4) */
-.year-toggle.active-year {
-    background: rgba(153, 214, 255, 0.4) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-    /* 同時可以讓文字稍微深一點點，增加清晰度 */
-    color: #ffffff !important; 
-}
-
-.year-section {
-    /* 原本可能是 25px，我們調大一點 */
-    margin-bottom: 13px !important; 
-    width: 100%;
-}
-
-/* 3. 箭頭修飾：讓箭頭也跟隨顏色 */
-.arrow {
-    font-size: 16px;
-    color: inherit; /* 自動跟隨文字顏色 */
-    transition: transform 0.3s ease;
-}
-
-/* 3. 作品名字：同步鎖定 */
-.gallery-item span {
-    display: block;
-    font-size: 11px;
-    color: #7373B9 !important; 
+    color: #7373B9 !important;
     margin-top: 10px;
     letter-spacing: 1px;
     font-weight: 500;
     text-align: center;
 }
 
-/* 控制內容顯示/隱藏的過渡 */
-.year-content {
-    max-height: 2000px; /* 設定一個夠大的高度 */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
-    opacity: 1;
+.lum-lightbox {
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(5px);
 }
 
-/* 當被隱藏時的狀態 */
+/* --- 年份摺疊選單 --- */
+.year-section {
+    margin-bottom: 30px !important;
+    width: 100%;
+}
+
+.year-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100% !important;
+    padding: 22px 25px !important;
+    border-radius: 60px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #7373B9 !important; /* 修改為與標題一致的紫色 */
+    background: rgba(180, 225, 255, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+/* 當年份被打開時的顏色 */
+.year-toggle.active-year {
+    background: rgba(153, 214, 255, 0.4) !important;
+    color: #ffffff !important; 
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.year-content {
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
 .year-content.hidden {
     max-height: 0;
-    opacity: 0;
-    margin-bottom: 0;
     display: none !important;
 }
-
