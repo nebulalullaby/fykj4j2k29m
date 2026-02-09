@@ -297,3 +297,46 @@ p {
     border-radius: 15px !important;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
+
+/* 年份分類外框 */
+.year-section {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* 年份切換按鈕 (玻璃感條狀) */
+.year-toggle {
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 20px;
+    color: #4B4453;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.year-toggle:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* 控制內容顯示/隱藏的過渡 */
+.year-content {
+    max-height: 2000px; /* 設定一個夠大的高度 */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+    opacity: 1;
+}
+
+/* 當被隱藏時的狀態 */
+.year-content.hidden {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
