@@ -383,3 +383,16 @@ p {
     display: none !important;
 }
 
+/* 許願池專屬樣式 */
+.wish-form-wrapper {
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden; /* 確保表單圓角 */
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05); /* 極淡的底色 */
+}
+
+.wish-form-wrapper iframe {
+    /* 讓嵌入的表單稍微帶點透明度 */
+    opacity: 0.9;
+}
