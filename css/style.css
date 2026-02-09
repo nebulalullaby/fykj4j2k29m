@@ -226,11 +226,11 @@ p {
 .back-home-btn {
     /* 繼承 social-circle 的所有冰晶效果 */
     display: inline-flex !important; /* 確保它不會像社群按鈕那樣居中 */
-    color: #7373B9 !important; /* 使用妳最愛的薰衣草紫色 */
+    color: #ffffff !important; /* 使用妳最愛的薰衣草紫色 */
 }
 
 .back-home-btn:hover {
-    background: rgba(153, 214, 255, 0.4) !important; /* 碰觸時變成妳要的水藍色 */
+    background: rgba(255, 255, 255, 0.8) !important; /* 碰觸時變成妳要的水藍色 */
     color: #ffffff !important;
 }
 
