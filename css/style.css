@@ -302,9 +302,6 @@ p {
 .year-section {
     margin-bottom: 25px;
     width: 100%;
-color: #7373B9 !important; /* 修改為薰衣草藍紫色 */
-    font-size: 14px; /* [可改] 如果想讓年份大一點點 */
-    letter-spacing: 1px;
 }
 
 /* 年份切換按鈕 (玻璃感條狀) */
@@ -314,7 +311,9 @@ color: #7373B9 !important; /* 修改為薰衣草藍紫色 */
     background: rgba(255, 255, 255, 0.15) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
     border-radius: 20px;
-    color: #4B4453;
+    color: #7373B9 !important; /* 修改為薰衣草藍紫色 */
+    font-size: 14px; /* [可改] 如果想讓年份大一點點 */
+    letter-spacing: 1px;
     font-weight: 600;
     display: flex;
     justify-content: space-between;
