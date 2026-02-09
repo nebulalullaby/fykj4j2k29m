@@ -324,7 +324,7 @@ p {
     font-weight: 600 !important;
     
     /* 文字顏色：改為妳要的薰衣草紫色 */
-    color: #7373B9 !important; 
+    color: #e6f5ff !important; 
     
     /* 平時狀態：Baby Blue 0.4 透明 */
     background: rgba(225, 240, 255, 0.4) !important; 
@@ -343,7 +343,7 @@ p {
     background: rgba(252, 236, 242, 0.9) !important; 
     
     /* 懸停文字顏色：可以維持紫色，或變深增加層次 */
-    color: #4B4453 !important; 
+    color: #ffffff !important; 
 
   /* 額外加分：可以讓邊框稍微亮一點點，增加「點擊感」 */
     border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
