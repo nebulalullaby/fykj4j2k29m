@@ -22,7 +22,7 @@
 <!-- 年份分類區塊：2026 -->
 <div class="year-section">
     <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
-    <button class="year-toggle" onclick="toggleYear('year2026')">
+    <button class="year-toggle active-year" onclick="toggleYear('year2026')">
         <span>2026 Collection</span>
         <span class="arrow">⇣</span>
     </button>
@@ -85,17 +85,24 @@
 
     function toggleYear(yearId) {
     const content = document.getElementById(yearId);
-    const arrow = event.currentTarget.querySelector('.arrow');
+    // 找到點擊的那個按鈕本身
+    const btn = event.currentTarget;
+    const arrow = btn.querySelector('.arrow');
     
+    // 1. 切換內容的隱藏/顯示
     content.classList.toggle('hidden');
     
-    // 箭頭旋轉效果
+    // 2. 同步切換按鈕的「水藍色」狀態
+    btn.classList.toggle('active-year');
+    
+    // 3. 控制箭頭旋轉
     if (content.classList.contains('hidden')) {
         arrow.style.transform = 'rotate(-90deg)';
     } else {
         arrow.style.transform = 'rotate(0deg)';
     }
 }
+
 </script>
     
 </html>
