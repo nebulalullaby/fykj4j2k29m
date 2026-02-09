@@ -327,7 +327,7 @@ p {
     color: #e6f5ff !important; 
     
     /* 平時狀態：Baby Blue 0.4 透明 */
-    background: rgba(225, 240, 255, 0.4) !important; 
+    background: rgba(180, 225, 255, 0.3) !important; 
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
     
     cursor: pointer;
@@ -335,19 +335,6 @@ p {
     outline: none !important;
     appearance: none;
     -webkit-appearance: none;
-}
-
-/* 2. 反白效果：完全複製首頁的 Baby Pink 浮起感 */
-.year-toggle:hover {
-    /* 反白狀態：Baby Pink 0.9 透明 */
-    background: rgba(252, 236, 242, 0.9) !important; 
-    
-    /* 懸停文字顏色：可以維持紫色，或變深增加層次 */
-    color: #ffffff !important; 
-
-  /* 額外加分：可以讓邊框稍微亮一點點，增加「點擊感」 */
-    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
-  
 }
 
 /* 3. 箭頭修飾：讓箭頭也跟隨顏色 */
