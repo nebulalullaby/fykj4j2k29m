@@ -344,9 +344,10 @@ p {
     
     /* 懸停文字顏色：可以維持紫色，或變深增加層次 */
     color: #4B4453 !important; 
-    
-    transform: translateY(-5px) !important; /* 複製首頁的向上浮動 */
-    box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important; /* 複製首頁的粉色燈影 */
+
+  /* 額外加分：可以讓邊框稍微亮一點點，增加「點擊感」 */
+    border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  
 }
 
 /* 3. 箭頭修飾：讓箭頭也跟隨顏色 */
