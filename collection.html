@@ -18,36 +18,31 @@
         <p style="margin-bottom: 40px;">Archive Collection</p>
 
         <!-- 相簿網格 -->
-<div class="gallery-grid">
-    <!-- 第一件作品 -->
-    <div class="gallery-item">
-        <!-- href 放的是點開後的大圖路徑，加上 class="zoom-img" -->
-        <a href="images/IMG_9097.PNG" class="zoom-img">
-            <div class="img-wrapper">
-                <img src="images/IMG_9097.PNG" alt="XXX">
-            </div>
-        </a>
-        <span>XXXXXXXXX - XXX</span>
-    </div>
+<!-- 年份分類區塊：2026 -->
+<div class="year-section">
+    <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
+    <button class="year-toggle" onclick="toggleYear('year2026')">
+        <span>2026 Collection</span>
+        <span class="arrow">↓</span>
+    </button>
 
-    <!-- 之後增加作品，只需複製上面的結構並更換圖片路徑即可 -->
+    <!-- 圖片內容區：預設是打開的 -->
+    <div id="year2026" class="year-content">
+        <div class="gallery-grid">
+            <!-- 這裡放妳之前的圖片區塊 -->
+            <div class="gallery-item">
+                <a href="images/IMG_9097.PNG" class="zoom-img">
+                    <div class="img-wrapper"><img src="images/IMG_9097.PNG"></div>
+                </a>
+                <span>XXXXXXXX - XXXX</span>
+            </div>
+            <!-- 可以繼續加更多 2026 的圖 -->
+        </div>
+    </div>
 </div>
 
-<div class="gallery-grid">
-    <!-- 第二件作品 -->
-    <div class="gallery-item">
-        <!-- href 放的是點開後的大圖路徑，加上 class="zoom-img" -->
-        <a href="images/collection/item1.jpg" class="zoom-img">
-            <div class="img-wrapper">
-                <img src="images/collection/item1.jpg" alt="XXX">
-            </div>
-        </a>
-        <span>XXXXXXXXX - XXX</span>
-    </div>
+<!-- 以後增加 2025 或 2027，只需複製上面這段並改 ID 即可 -->
 
-    <!-- 之後增加作品，只需複製上面的結構並更換圖片路徑即可 -->
-</div>
-        
         <footer class="footer">
             <p class="copyright">© 2026 XXXX Studio</p>
         </footer>
