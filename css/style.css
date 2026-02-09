@@ -31,7 +31,7 @@ body::before {
 .container {
   width: 92%;
   max-width: 400px;
-  min-height: 520px;
+  min-height: 600px !important; /* [可改] 根據妳內容的多寡，設定一個固定的最小高度 */
   padding: 50px 24px;
   
   /* 關鍵：不使用 blur，改用極透的 0.12 白色，確保 Safari 內外一致 */
@@ -54,6 +54,8 @@ body::before {
   box-sizing: border-box;
 
   margin: 20px auto !important;
+  /* 關鍵：讓內部的元素有能力分配空間 */
+  justify-content: flex-start; 
 }
 
 .avatar {
@@ -220,8 +222,9 @@ p {
 
 /* 頁尾高級感美化 */
 .footer {
-    margin-top: 50px; /* 增加間距，讓畫面底部更空靈 */
-    padding-bottom: 10px;
+    margin-top: auto !important; /* 核心：自動推到最下面，不管上面有沒有收合 */
+    padding-top: 40px; /* 與上方內容保持最小安全距離 */
+    padding-bottom: 20px;
     text-align: center;
     display: flex;
     flex-direction: column; /* 強制分行 */
