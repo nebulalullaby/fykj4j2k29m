@@ -388,11 +388,11 @@ p {
     width: 100%;
     border-radius: 25px;
     overflow: hidden; /* 確保表單圓角 */
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
     background: transparent !important;
 }
 
 .wish-form-wrapper iframe {
     /* 讓嵌入的表單稍微帶點透明度 */
-    opacity: 0.9;
+    opacity: 0.3;
 }
