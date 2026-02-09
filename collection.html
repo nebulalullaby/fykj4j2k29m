@@ -56,6 +56,20 @@
 <script>
   // 2. 啟動魔法：讓所有 class 為 "zoom-img" 的圖片都能點擊放大
   new LuminousGallery(document.querySelectorAll(".zoom-img"));
+
+    function toggleYear(yearId) {
+    const content = document.getElementById(yearId);
+    const arrow = event.currentTarget.querySelector('.arrow');
+    
+    content.classList.toggle('hidden');
+    
+    // 箭頭旋轉效果
+    if (content.classList.contains('hidden')) {
+        arrow.style.transform = 'rotate(-90deg)';
+    } else {
+        arrow.style.transform = 'rotate(0deg)';
+    }
+}
 </script>
     
 </html>
