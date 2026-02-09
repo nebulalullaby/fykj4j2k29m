@@ -389,7 +389,6 @@ p {
     border-radius: 25px;
     overflow: hidden; /* 確保表單圓角 */
     border: 1.5px solid rgba(255, 255, 255, 0.3);
-    /* background: rgba(255, 255, 255, 0.05); /* 極淡的底色 */
     background: transparent !important;
 }
 
