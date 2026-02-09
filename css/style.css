@@ -340,9 +340,9 @@ p {
 /* 當年份被打開時，按鈕呈現水藍色 (0.4) */
 .year-toggle.active-year {
     background: rgba(153, 214, 255, 0.4) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
     /* 同時可以讓文字稍微深一點點，增加清晰度 */
-    color: #5b5ba3 !important; 
+    color: #ffffff !important; 
 }
 
 .year-section {
