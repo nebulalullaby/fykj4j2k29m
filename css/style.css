@@ -385,33 +385,17 @@ p {
 
 /* 許願池專屬樣式 */
 .wish-form-wrapper {
-    position: relative; /* 建立座標基準 */
     width: 100%;
     border-radius: 25px;
     overflow: hidden; /* 確保表單圓角 */
     border: 1.5px solid rgba(255, 255, 255, 0.4);
     background: transparent !important;
+    margin-top: 20px;
+    /* 這裡可以加一個極淡的發光底，讓表單文字更清晰 */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
 }
 
 .wish-form-wrapper iframe {
     /* 讓嵌入的表單稍微帶點透明度 */
     /* opacity: 0.8; */
-}
-
-.wish-form-wrapper::after {
-    content: "";
-    position: absolute;
-    /* 定位在右下角 */
-    bottom: 0;
-    right: 0;
-    /* 這裡的大小要剛好蓋住 Tally 字樣，通常 120px 寬、40px 高就夠了 */
-    width: 80px; 
-    height: 65px;
-    
-    /* 核心：蓋上一塊跟妳背景板一樣的顏色 */
-    /* 如果妳想要更自然，可以用妳的玻璃色 rgba(255, 255, 255, 0.12) */
-    background: rgba(255, 255, 255, 0.12) !important; /* 或者直接用背景星雲的底色 */
-    
-    z-index: 99; /* 確保蓋在 iframe 上面 */
-    pointer-events: none; /* 讓滑鼠可以穿透，不會影響點擊 */
 }
