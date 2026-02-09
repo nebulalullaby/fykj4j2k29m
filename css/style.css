@@ -7,7 +7,8 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* 核心：改為從頂部開始排，不要垂直置中 */
+  padding: 80px 0 !important; /* 這裡的 80px 就決定了板子離頂部的高度 */
 }
 
 body::before {
@@ -31,7 +32,8 @@ body::before {
 .container {
   width: 92%;
   max-width: 400px;
-  min-height: 600px !important; /* [可改] 根據妳內容的多寡，設定一個固定的最小高度 */
+  /* 鎖定最小高度，建議設高一點點（如 650px） */
+  min-height: 650px !important;
   padding: 50px 24px;
   
   /* 關鍵：不使用 blur，改用極透的 0.12 白色，確保 Safari 內外一致 */
@@ -48,12 +50,16 @@ body::before {
   /* 增加內部發光 (inset) 讓透明板子有厚度感 */
   box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 
               0 15px 35px rgba(0, 0, 0, 0.03) !important;
-  
+
+  /* 讓內部的內容有自發的推力 */
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; 
   box-sizing: border-box;
 
-  margin: 20px auto !important;
+  /* 確保 margin 不會因為 flex 居中而變動 */
+  margin: 0 auto !important;
+  
   /* 關鍵：讓內部的元素有能力分配空間 */
   justify-content: flex-start; 
 }
