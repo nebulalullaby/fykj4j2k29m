@@ -409,7 +409,12 @@ p {
     font-size: 13px;
     line-height: 1.8; 
     color: #7373B9; 
-    text-align: left; 
+    text-align: left !important; 
+
+    /* 確保內部的段落或是文字塊也靠左 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
     
     /* 核心：白色微透 0.35 背景 */
     background: rgba(255, 255, 255, 0.35) !important; 
