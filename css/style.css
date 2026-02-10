@@ -399,3 +399,13 @@ p {
     /* 讓嵌入的表單稍微帶點透明度 */
     /* opacity: 0.8; */
 }
+
+/* 訂購指南文字內容樣式 */
+.guide-text {
+    padding: 10px 20px 25px 20px; /* 增加內部留白 */
+    font-size: 13px;
+    line-height: 1.8; /* 增加行距，閱讀更舒服 */
+    color: #7373B9; /* 統一使用薰衣草紫色 */
+    text-align: left; /* 條款類建議靠左對齊，比較好閱讀 */
+    letter-spacing: 0.5px;
+}
