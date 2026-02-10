@@ -424,3 +424,13 @@ p {
     /* 增加內部發光，增加厚度質感 */
     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
+
+/* 核心修正：強制讓板子裡的所有段落也靠左 */
+.guide-text p, 
+.guide-text div, 
+.guide-text span {
+    text-align: left !important;
+    width: 100% !important; /* 確保佔滿寬度，字才會貼左 */
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
