@@ -19,14 +19,6 @@
 <body>
     <!-- 使用與首頁相同的玻璃板子架構 -->
     <div class="container">
-        
-        <!-- 返回按鈕 -->
-        <nav style="text-align: left; margin-bottom: 25px;">
-    <!-- 這裡改用小圓圈樣式，符號使用 ⌂ (House) -->
-    <a href="index.html" class="social-circle back-home-btn" aria-label="Back to Home">
-        <span style="font-size: 20px; position: relative; top: -1px;">⌂</span>
-    </a>
-        </nav>
 
         <h1 style="font-size: 22px; margin-bottom: 30px;">Privacy Policy</h1>
                 <p style="margin-bottom: 40px;"> </p>
@@ -65,5 +57,22 @@
 </footer>
         
     </div>
+
+    <!-- 1. 懸浮選單按鈕 -->
+<div class="fab-wrapper">
+    <!-- 平時只顯示一個星雲符號 -->
+    <button class="fab-main" onclick="toggleFab()">
+        <span class="fab-icon">✧</span>
+    </button>
+    
+    <!-- 展開後的菜單 -->
+    <div class="fab-menu" id="fabMenu">
+        <a href="index.html" class="fab-item">Home</a>
+        <a href="guide.html" class="fab-item">Order Guide</a>
+        <a href="collection.html" class="fab-item">The Archive</a>
+        <a href="wish.html" class="fab-item">Make a Wish</a>
+    </div>
+</div>
+    
 </body>
 </html>
