@@ -17,7 +17,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /* 這裡放妳的背景圖 */
+    /* 這裡放背景圖 */
     background: url('../images/IMG_9097.PNG') no-repeat center center;
     background-size: cover;
     z-index: -1; /* 確保它在所有東西的下面 */
@@ -27,7 +27,7 @@ body::before {
     transform: translateZ(0);
 }
 
-/* 2. 背景板：採用你之前成功的「無模糊純透視」方案 */
+/* 2. 背景板：採用之前成功的「無模糊純透視」方案 */
 .container {
   width: 92%;
   max-width: 400px;
@@ -65,10 +65,10 @@ body::before {
   width: 150px !important; 
   height: auto !important; /* 讓高度自動比例縮放，不會變形 */
   
-  /* 2. 移除強制圓形（如果妳的 Logo 是不規則或長方形的） */
+  /* 2. 移除強制圓形（如果 Logo 是不規則或長方形） */
   border-radius: 0 !important; 
   
-  /* 3. 移除原本的白色邊框（除非妳覺得好看） */
+  /* 3. 移除原本的白色邊框 */
   border: none !important;
   
   /* 4. 確保圖示居中 */
@@ -111,7 +111,7 @@ p {
   text-align: center;
 }
 
-/* 4. 按鈕：維持你最滿意的 Lit.link 膠囊形狀與 Baby 配色 */
+/* 4. 按鈕：維持膠囊形狀與配色 */
 .button {
   display: flex !important;
   align-items: center;
@@ -127,13 +127,13 @@ p {
   font-weight: 600 !important;
   color: #e6f5ff !important;
   
-  /* 平時：Baby Blue */
+  /* 平時：Blue */
   background: rgba(180, 225, 255, 0.3) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 5. 反白效果：Baby Pink 浮起 */
+/* 5. 反白效果：Baby 浮起 */
 .button:hover {
   filter: none !important;
   text-decoration: none !important;
@@ -143,16 +143,16 @@ p {
   box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
-/* 預購表單專屬：溫柔 Baby Pink */
+/* 表單專屬 */
 /* 1. 定義流光按鈕基礎樣式 */
 /* 1. 基礎按鈕容器 */
 .special-btn {
     position: relative;
     padding: 12px 35px;
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #7373B9 !important;
-    border: none !important;
-    border-radius: 50px !important;
+    background: rgba(180, 225, 255, 0.3) !important;
+    color: #e6f5ff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 60px !important;
     overflow: visible; /* 讓光暈可以透出來 */
     z-index: 1;
 }
@@ -162,8 +162,8 @@ p {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px; /* 這是邊框的粗細 */
-    border-radius: 50px; 
+    padding: 1.5px; /* 這是邊框的粗細 */
+    border-radius: 60px; 
     
     /* 核心魔法：利用 conic-gradient 做出一段「白光束」 */
     background: conic-gradient(
