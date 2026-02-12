@@ -46,77 +46,41 @@
         <!-- 相簿網格 -->
         
 <!-- 年份分類區塊 -->
+        
 <!-- 2026 Collection -->
 <div class="year-section">
-        <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
     <button class="year-toggle active-year" onclick="toggleYear('year2026')">
         <span>2026 Collection</span>
-        <span class="arrow">⇣</span>
+        <span class="arrow">↓</span>
     </button>
+
     <div id="year2026" class="year-content">
         <div class="guide-text" style="margin-top: 10px; padding: 20px !important;">
-            <!-- 🔑 關鍵：一定要加上這一行，九宮格才會出現 -->
+            <!-- 🔑 關鍵 1：必須有 gallery-grid -->
             <div class="gallery-grid">
                 
-                <!-- 第一張圖 -->
+                <!-- 第一張作品 -->
+                <div class="gallery-item">
+                    <!-- 🔑 關鍵 2：使用 gallery-link，且引號全為半型 -->
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="Work 1">
+                        </div>
+                    </a>
+                    <span>Whipping Cream - Soda</span>
+                </div>
+
+                <!-- 第二張作品 -->
                 <div class="gallery-item">
                     <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
                         <div class="img-wrapper">
-                            <img src="images/IMG_9097.PNG" alt="XXXX">
+                            <img src="images/IMG_9097.PNG" alt="Work 2">
                         </div>
                     </a>
-                    <span>XXXXXXXX - XXXX</span>
+                    <span>Whipping Cream - Berry</span>
                 </div>
 
-                <!-- 第二張圖 -->
-                <div class="gallery-item">
-                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
-                        <div class="img-wrapper">
-                            <img src="images/IMG_9097.PNG" alt="XXXX">
-                        </div>
-                    </a>
-                    <span>XXXXXXXX - XXXX</span>
-                </div>
-
-            </div> <!-- 🔑 關閉 gallery-grid -->
-        </div>
-    </div>
-</div>
-<!-- 以後增加 2025 或 2027，只需複製上面這段並改 ID 即可 -->
-
-<!-- 2025 Collection -->
-<div class="year-section">
-        <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
-    <button class="year-toggle active-year" onclick="toggleYear('year2025')">
-        <span>2025 Collection</span>
-        <span class="arrow">⇣</span>
-    </button>
-    <div id="year2025" class="year-content hidden">
-        <div class="guide-text" style="margin-top: 10px; padding: 20px !important;">
-            <!-- 🔑 關鍵：一定要加上這一行，九宮格才會出現 -->
-            <div class="gallery-grid">
-                
-                <!-- 第一張圖 -->
-                <div class="gallery-item">
-                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
-                        <div class="img-wrapper">
-                            <img src="images/IMG_9097.PNG" alt="XXXX">
-                        </div>
-                    </a>
-                    <span>XXXXXXXX - XXXX</span>
-                </div>
-
-                <!-- 第二張圖 -->
-                <div class="gallery-item">
-                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
-                        <div class="img-wrapper">
-                            <img src="images/IMG_9097.PNG" alt="XXXX">
-                        </div>
-                    </a>
-                    <span>XXXXXXXX - XXXX</span>
-                </div>
-
-            </div> <!-- 🔑 關閉 gallery-grid -->
+            </div>
         </div>
     </div>
 </div>
