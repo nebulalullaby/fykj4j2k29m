@@ -129,7 +129,7 @@ p {
   
   /* 平時：Blue */
   background: rgba(180, 225, 255, 0.3) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -381,7 +381,7 @@ p {
     
     /* 平時狀態：Baby Blue 0.4 透明 */
     background: rgba(180, 225, 255, 0.3) !important; 
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
     
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
