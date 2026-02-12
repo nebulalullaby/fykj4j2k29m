@@ -435,15 +435,32 @@ p {
     margin-right: auto !important;
 }
 
-/* 燈箱背景：半透明深色，帶有模糊感 */
-.simple-lightbox-overlay {
-    background: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(8px);
-    z-index: 1000;
+/* 1. 讓燈箱背景變為半透明深紫色，並加入模糊感 */
+.sl-overlay {
+    background: rgba(20, 20, 45, 0.7) !important; /* 深紫色半透明 0.7 */
+    backdrop-filter: blur(10px) !important;      /* 磨砂玻璃模糊效果 */
+    -webkit-backdrop-filter: blur(10px) !important;
 }
 
-/* 彈出的大圖：帶有微小圓角 */
-.simple-lightbox-image {
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(115, 115, 185, 0.3);
+/* 2. 讓彈出的大圖帶有圓角與紫色發光陰影 */
+.sl-wrapper .sl-image img {
+    border-radius: 20px !important;
+    box-shadow: 0 0 30px rgba(115, 115, 185, 0.4) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
 }
+
+/* 3. 讓關閉按鈕和箭頭也變成薰衣草紫色 */
+.sl-wrapper .sl-close, 
+.sl-wrapper .sl-navigation button {
+    color: #7373B9 !important;
+}
+
+/* 4. 修改圖片下方的文字（Caption）樣式 */
+.sl-caption {
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+    color: #7373B9 !important;
+    font-weight: 500 !important;
+    padding: 15px !important;
+}
+
