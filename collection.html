@@ -56,30 +56,25 @@
     <!-- 圖片內容區：預設是打開的 -->
     <div id="year2026" class="year-content">
         <div class="guide-text" style="margin-top: 10px; padding: 20px !important;">
-        <div class="gallery-grid">
-            <!-- 這裡放妳之前的圖片區塊 -->
             <div class="gallery-item">
-                <a href="images/IMG_9097.PNG" class="zoom-img">
-                    <div class="img-wrapper"><img src="images/IMG_9097.PNG"></div>
-                </a>
-                <span>XXXXXXXX - XXXX</span>
-            </div>
+                
+    <!-- 關鍵：加上 data-gallery 讓燈箱知道這些圖是一組的，可以左右滑 -->
+    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+        <div class="img-wrapper">
+            <img src="images/IMG_9097.PNG" alt=“XXXX”>
+        </div>
+    </a>
+    <span>XXXXXXXX - XXXX</span>
+</div>
             <!-- 可以繼續加更多 2026 的圖 -->
-            <!-- 這裡放妳之前的圖片區塊 -->
             <div class="gallery-item">
-                <a href="images/IMG_9097.PNG" class="zoom-img">
-                    <div class="img-wrapper"><img src="images/IMG_9097.PNG"></div>
-                </a>
-                <span>XXXXXXXX - XXXX</span>
-            </div>
-            <!-- 可以繼續加更多 2026 的圖 -->
-            <!-- 這裡放妳之前的圖片區塊 -->
-            <div class="gallery-item">
-                <a href="images/IMG_9097.PNG" class="zoom-img">
-                    <div class="img-wrapper"><img src="images/IMG_9097.PNG"></div>
-                </a>
-                <span>XXXXXXXX - XXXX</span>
-            </div>
+    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+        <div class="img-wrapper">
+            <img src="images/IMG_9097.PNG" alt=“XXXX”>
+        </div>
+    </a>
+    <span>XXXXXXXX - XXXX</span>
+</div>
             <!-- 可以繼續加更多 2026 的圖 -->
             </div>
         </div>
@@ -137,6 +132,25 @@
     <a href="privacy.html" class="privacy-link">Privacy Policy</a>
 </footer>
     </div>
+
+    // 這裡我們引入一個極簡的燈箱 CDN (或是妳想用現成的 Lightbox 庫)
+// 為了不讓妳下載檔案，我們直接在 HTML 加入這兩行連結：
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+<script src="https://cdnjs.cloudflare.com"></script>
+<script>
+    // 初始化燈箱：讓有 .gallery-link 的圖片可以左右連動
+    var lightbox = new SimpleLightbox('.gallery-link', {
+        /* 設定細節 */
+        overlayOpacity: 0.8,
+        uniqueImages: true,
+        close: true,
+        showCounter: true, // 顯示 1/5 這種頁數
+        animationSpeed: 250,
+        loop: true // 到底了自動回第一張
+    });
+</script>
+
 </body>
     
 <!-- 1. 引入燈箱的樣式與功能 (放在 </body> 之前) -->
