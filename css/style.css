@@ -491,12 +491,20 @@ p {
     width: 50px;
     height: 50px;
     border-radius: 50% !important;
+    
+    /* 核心置中設定 */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important; /* 移除可能的內距干擾 */
+    
     background: rgba(255, 255, 255, 0.4) !important;
     backdrop-filter: blur(10px);
     border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
     box-shadow: 0 8px 20px rgba(115, 115, 185, 0.2);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden; /* 確保內容不溢出 */
 }
 
 .fab-main:hover {
@@ -505,9 +513,18 @@ p {
 }
 
 .fab-icon {
-    font-size: 24px;
-    color: #7373B9;
+    font-size: 26px; /* 稍微放大一點點更美 */
+    color: #ffffff;
     text-shadow: 0 0 8px rgba(115, 115, 185, 0.4);
+    
+    /* 🔑 絕招：如果它看起來還是偏上或偏下，手動用這行微調 */
+    /* 數值正數往下移，負數往上移 */
+    position: relative;
+    top: 1px; 
+    
+    /* 確保沒有多餘的行高干擾 */
+    line-height: 1 !important;
+    display: inline-block;
 }
 
 /* 選單：預設隱藏且縮小 */
