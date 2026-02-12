@@ -144,63 +144,6 @@ p {
 }
 
 /* 表單專屬 */
-/* 1. 定義流光按鈕基礎樣式 */
-/* 1. 基礎按鈕容器 */
-.special-btn {
-    position: relative;
-    padding: 12px 35px;
-    background: rgba(180, 225, 255, 0.3) !important;
-    color: #e6f5ff !important;
-    border: none !important;
-    border-radius: 60px !important;
-    overflow: visible; /* 讓光暈可以透出來 */
-    z-index: 1;
-}
-
-/* 2. 這是流動的白光線條 */
-.special-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1.5px; /* 這是邊框的粗細 */
-    border-radius: 60px; 
-    
-    /* 核心魔法：利用 conic-gradient 做出一段「白光束」 */
-    background: conic-gradient(
-        from var(--angle),
-        transparent 70%,
-        rgba(255, 255, 255, 0.9) 85%, /* 這是流星的頭 */
-        rgba(153, 214, 255, 0.4) 95%, /* 這是流星的尾巴 */
-        transparent
-    );
-    
-    /* 遮罩：只顯示邊框部分，把中間挖空 */
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    
-    animation: rotate-angle 3s linear infinite;
-}
-
-/* 3. 定義旋轉角度變數 */
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes rotate-angle {
-  to { --angle: 360deg; }
-}
-
-/* 4. 滑鼠移上去時，流光變亮且加速 */
-.special-btn:hover::before {
-    animation-duration: 1.5s;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-}
-
 /* 1. 療癒系星空按鈕基礎 */
 .special-starry-btn {
     position: relative;
