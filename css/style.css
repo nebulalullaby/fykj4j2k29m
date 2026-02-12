@@ -477,3 +477,75 @@ p {
 .hidden-photo {
     display: none !important;
 }
+
+/* 懸浮球外殼 */
+.fab-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+    z-index: 9999;
+}
+
+/* 主按鈕：磨砂玻璃質感 */
+.fab-main {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 8px 20px rgba(115, 115, 185, 0.2);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fab-main:hover {
+    transform: scale(1.1);
+    background: rgba(180, 225, 255, 0.5) !important; /* 變水藍色 */
+}
+
+.fab-icon {
+    font-size: 24px;
+    color: #7373B9;
+    text-shadow: 0 0 8px rgba(115, 115, 185, 0.4);
+}
+
+/* 選單：預設隱藏且縮小 */
+.fab-menu {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.4s ease;
+}
+
+/* 顯示選單時 */
+.fab-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* 選單選項樣式 */
+.fab-item {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #7373B9 !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+}
+
+.fab-item:hover {
+    background: #e6f5ff !important;
+    transform: translateX(-5px);
+}
