@@ -137,21 +137,31 @@
 </div> <!-- 關閉 column (如果有) -->
 </div> <!-- 關閉 container -->
 
-<!-- 2. 引入 SimpleLightbox (左右滑動必備) -->
+<!-- 2. 引入正確的 SimpleLightbox 資源 (校準版網址) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 <script src="https://cdnjs.cloudflare.com"></script>
 
 <script>
-    // 3. 初始化燈箱：這會自動抓取 data-gallery 進行分組
-    var lightbox = new SimpleLightbox('.gallery-link', {
-        overlayOpacity: 0.9,
-        swipeClose: true,
-        showCounter: true,
-        fadeSpeed: 200,
-        uniqueImages: false // 允許同一個年份內切換
+    // 3. 核心修正：強制在 DOM 完全加載後初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        try {
+            // 初始化並攔截所有 .gallery-link
+            var lightbox = new SimpleLightbox('.gallery-link', {
+                overlayOpacity: 0.9,
+                uniqueImages: false,
+                close: true,
+                showCounter: true,
+                animationSpeed: 200,
+                loop: true,
+                disableScroll: true // 確保背景不滾動
+            });
+            console.log("SimpleLightbox initialized successfully!");
+        } catch (e) {
+            console.error("Lightbox init failed: ", e);
+        }
     });
 
-    // 4. 原有的年份摺疊功能
+    // 4. 年份摺疊功能 (維持妳原本正確的邏輯)
     function toggleYear(yearId) {
         const content = document.getElementById(yearId);
         const btn = event.currentTarget;
@@ -167,6 +177,5 @@
         }
     }
 </script>
-
 </body>
 </html>
