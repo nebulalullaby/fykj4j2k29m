@@ -62,7 +62,7 @@
                 <!-- 第一張作品 -->
                 <div class="gallery-item">
                     <!-- 🔑 關鍵 2：使用 gallery-link，且引號全為半型 -->
-                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026 A">
                         <div class="img-wrapper">
                             <img src="images/IMG_9097.PNG" alt="Work 1">
                         </div>
@@ -72,7 +72,37 @@
 
                 <!-- 第二張作品 -->
                 <div class="gallery-item">
-                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026 A">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="Work 2">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX XXXXX - XXXXXXXXX</span>
+                </div>
+
+                <!-- 第二張作品 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026 B">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="Work 2">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX XXXXX - XXXXXXXXX</span>
+                </div>
+
+                <!-- 第二張作品 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026 B">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="Work 2">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX XXXXX - XXXXXXXXX</span>
+                </div>
+
+                <!-- 第二張作品 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026 B">
                         <div class="img-wrapper">
                             <img src="images/IMG_9097.PNG" alt="Work 2">
                         </div>
@@ -146,23 +176,25 @@
 
 <script>
     // 3. 核心修正：強制在 DOM 完全加載後初始化
-    document.addEventListener('DOMContentLoaded', function() {
-        try {
-            // 初始化並攔截所有 .gallery-link
-            var lightbox = new SimpleLightbox('.gallery-link', {
-                overlayOpacity: 0.9,
-                uniqueImages: false,
-                close: true,
-                showCounter: true,
-                animationSpeed: 200,
-                loop: true,
-                disableScroll: true // 確保背景不滾動
-            });
-            console.log("SimpleLightbox initialized successfully!");
-        } catch (e) {
-            console.error("Lightbox init failed: ", e);
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 找出頁面上所有不同的 gallery 組別名字
+    const galleryLinks = document.querySelectorAll('.gallery-link');
+    const groupNames = new Set();
+    galleryLinks.forEach(link => {
+        if (link.dataset.gallery) groupNames.add(link.dataset.gallery);
     });
+
+    // 2. 針對每一個組別，單獨啟動一個燈箱實例
+    groupNames.forEach(name => {
+        new SimpleLightbox(`.gallery-link[data-gallery="${name}"]`, {
+            overlayOpacity: 0.9,
+            uniqueImages: false,
+            swipeClose: true,
+            showCounter: true,
+            loop: true
+        });
+    });
+});
 
     // 4. 年份摺疊功能 (維持妳原本正確的邏輯)
     function toggleYear(yearId) {
