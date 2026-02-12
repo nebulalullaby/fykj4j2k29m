@@ -351,7 +351,16 @@ p {
     background: rgba(153, 214, 255, 0.4) !important;
     border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
     /* 同時可以讓文字稍微深一點點，增加清晰度 */
-    color: #ffffff !important; 
+    color: #e6f5ff !important; 
+  
+/* 如果妳希望開啟時文字稍微深一點點增加對比，可以用下面這行： */
+    /* color: #ffffff !important; */
+}
+
+/* 3. 確保箭頭也跟著文字顏色走 */
+.arrow {
+    color: inherit; /* 自動跟隨上面設定的紫色 */
+    transition: transform 0.3s ease;
 }
 
 .year-section {
