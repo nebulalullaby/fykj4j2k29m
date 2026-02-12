@@ -464,3 +464,7 @@ p {
     padding: 15px !important;
 }
 
+/* 隱藏相簿中的細節圖，只留封面 */
+.hidden-photo {
+    display: none !important;
+}
