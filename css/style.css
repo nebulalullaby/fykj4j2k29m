@@ -145,60 +145,60 @@ p {
 
 /* 預購表單專屬：溫柔 Baby Pink */
 /* 1. 定義流光按鈕基礎樣式 */
+/* 1. 基礎按鈕容器 */
 .special-btn {
     position: relative;
+    padding: 12px 35px;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #7373B9 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    overflow: visible; /* 讓光暈可以透出來 */
     z-index: 1;
-    overflow: hidden; /* 確保光束不溢出圓角 */
-    border: none !important; /* 移除原本的死板邊框 */
-    background: rgba(255, 255, 255, 0.2) !important; /* 保持玻璃底色 */
-    padding: 1px; /* 這裡的寬度決定了「流光邊框」的粗細 */
 }
 
-/* 2. 這是背後的流光旋轉層 */
+/* 2. 這是流動的白光線條 */
 .special-btn::before {
-    content: '';
+    content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    /* 這裡定義白光束的寬度與擴散度 */
+    inset: 0;
+    padding: 2px; /* 這是邊框的粗細 */
+    border-radius: 50px; 
+    
+    /* 核心魔法：利用 conic-gradient 做出一段「白光束」 */
     background: conic-gradient(
-        transparent, 
-        rgba(255, 255, 255, 0.8), /* 白光主束 */
-        rgba(255, 255, 255, 0.2), /* 餘光 */
-        transparent 30%
+        from var(--angle),
+        transparent 70%,
+        rgba(255, 255, 255, 0.9) 85%, /* 這是流星的頭 */
+        rgba(153, 214, 255, 0.4) 95%, /* 這是流星的尾巴 */
+        transparent
     );
-    animation: rotateGlow 4s linear infinite;
-    z-index: -2;
+    
+    /* 遮罩：只顯示邊框部分，把中間挖空 */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    animation: rotate-angle 3s linear infinite;
 }
 
-/* 3. 這是蓋在上面的遮罩層，讓中間恢復透明玻璃感 */
-.special-btn::after {
-    content: '';
-    position: absolute;
-    inset: 1.5px; /* 數值越大，邊框看起來越細 */
-    background: rgba(255, 255, 255, 0.15); /* 回復中間的半透明度 */
-    backdrop-filter: blur(10px);
-    border-radius: inherit; /* 跟隨按鈕圓角 */
-    z-index: -1;
+/* 3. 定義旋轉角度變數 */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
-/* 4. 流光旋轉動畫 */
-@keyframes rotateGlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes rotate-angle {
+  to { --angle: 360deg; }
 }
 
-/* 5. 滑鼠移上去時的加強效果 */
-.special-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
-@keyframes flowBg {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
+/* 4. 滑鼠移上去時，流光變亮且加速 */
+.special-btn:hover::before {
+    animation-duration: 1.5s;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
 /* 社交媒體橫排小圓區 */
