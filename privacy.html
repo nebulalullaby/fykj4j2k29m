@@ -73,6 +73,22 @@
         <a href="wish.html" class="fab-item">Make a Wish</a>
     </div>
 </div>
+
+<script>
+    // 雖然這頁沒有 toggleYear，但我們要這段來讓選單彈出來
+    function toggleFab() {
+        const menu = document.getElementById('fabMenu');
+        menu.classList.toggle('show');
+        
+        // 讓主按鈕點擊時旋轉一下 (變換為 × 的感覺)
+        const mainBtn = document.querySelector('.fab-main');
+        if(menu.classList.contains('show')) {
+            mainBtn.style.transform = 'rotate(45deg) scale(1.1)';
+        } else {
+            mainBtn.style.transform = 'rotate(0) scale(1)';
+        }
+    }
+</script>
     
 </body>
 </html>
