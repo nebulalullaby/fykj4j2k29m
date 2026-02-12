@@ -151,7 +151,7 @@ p {
     padding: 12px 35px;
     background: rgba(180, 225, 255, 0.3) !important;
     color: #e6f5ff !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+    border: none !important;
     border-radius: 60px !important;
     overflow: visible; /* 讓光暈可以透出來 */
     z-index: 1;
