@@ -45,141 +45,128 @@
 
         <!-- 相簿網格 -->
         
-<!-- 年份分類區塊：2026 -->
+<!-- 年份分類區塊 -->
+<!-- 2026 Collection -->
 <div class="year-section">
-    <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
+        <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
     <button class="year-toggle active-year" onclick="toggleYear('year2026')">
         <span>2026 Collection</span>
         <span class="arrow">⇣</span>
     </button>
-
-    <!-- 圖片內容區：預設是打開的 -->
     <div id="year2026" class="year-content">
         <div class="guide-text" style="margin-top: 10px; padding: 20px !important;">
-            <div class="gallery-item">
+            <!-- 🔑 關鍵：一定要加上這一行，九宮格才會出現 -->
+            <div class="gallery-grid">
                 
-    <!-- 關鍵：加上 data-gallery 讓燈箱知道這些圖是一組的，可以左右滑 -->
-    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
-        <div class="img-wrapper">
-            <img src="images/IMG_9097.PNG" alt=“XXXX”>
-        </div>
-    </a>
-    <span>XXXXXXXX - XXXX</span>
-</div>
-            <!-- 可以繼續加更多 2026 的圖 -->
-            <div class="gallery-item">
-    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
-        <div class="img-wrapper">
-            <img src="images/IMG_9097.PNG" alt=“XXXX”>
-        </div>
-    </a>
-    <span>XXXXXXXX - XXXX</span>
-</div>
-            <!-- 可以繼續加更多 2026 的圖 -->
-            </div>
+                <!-- 第一張圖 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="XXXX">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX - XXXX</span>
+                </div>
+
+                <!-- 第二張圖 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2026">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="XXXX">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX - XXXX</span>
+                </div>
+
+            </div> <!-- 🔑 關閉 gallery-grid -->
         </div>
     </div>
 </div>
 <!-- 以後增加 2025 或 2027，只需複製上面這段並改 ID 即可 -->
 
-<!-- 年份分類區塊：2025 -->
+<!-- 2025 Collection -->
 <div class="year-section">
-    <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
+        <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
     <button class="year-toggle active-year" onclick="toggleYear('year2025')">
         <span>2025 Collection</span>
         <span class="arrow">⇣</span>
     </button>
-
-    <!-- 圖片內容區：預設是打開的 -->
     <div id="year2025" class="year-content">
         <div class="guide-text" style="margin-top: 10px; padding: 20px !important;">
-            <div class="gallery-item">
+            <!-- 🔑 關鍵：一定要加上這一行，九宮格才會出現 -->
+            <div class="gallery-grid">
                 
-    <!-- 關鍵：加上 data-gallery 讓燈箱知道這些圖是一組的，可以左右滑 -->
-    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
-        <div class="img-wrapper">
-            <img src="images/IMG_9097.PNG" alt=“XXXX”>
-        </div>
-    </a>
-    <span>XXXXXXXX - XXXX</span>
-</div>
-            <!-- 可以繼續加更多 2025 的圖 -->
-            <div class="gallery-item">
-    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
-        <div class="img-wrapper">
-            <img src="images/IMG_9097.PNG" alt=“XXXX”>
-        </div>
-    </a>
-    <span>XXXXXXXX - XXXX</span>
-</div>
-            <!-- 可以繼續加更多 2026 的圖 -->
-            </div>
+                <!-- 第一張圖 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="XXXX">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX - XXXX</span>
+                </div>
+
+                <!-- 第二張圖 -->
+                <div class="gallery-item">
+                    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
+                        <div class="img-wrapper">
+                            <img src="images/IMG_9097.PNG" alt="XXXX">
+                        </div>
+                    </a>
+                    <span>XXXXXXXX - XXXX</span>
+                </div>
+
+            </div> <!-- 🔑 關閉 gallery-grid -->
         </div>
     </div>
 </div>
 <!-- 以後增加 2025 或 2027，只需複製上面這段並改 ID 即可 -->
 
 <footer class="footer">
-    <!-- 社交媒體小圓按鈕區 -->
     <div class="social-icons-row">
         <a href="你的X連結" class="social-circle" target="_blank" rel="noopener noreferrer"><img class="social-icon-img" src="images/icons/x.svg" alt="X Logo"></a>
         <a href="你的Instagram連結" class="social-circle" target="_blank" rel="noopener noreferrer"><img class="social-icon-img" src="images/icons/instagram.svg" alt="Instagram Logo"></a>
         <a href="你的Threads連結" class="social-circle" target="_blank" rel="noopener noreferrer"><img class="social-icon-img" src="images/icons/threads.svg" alt="Threads Logo"></a>
         <a href="你的Facebook連結" class="social-circle" target="_blank" rel="noopener noreferrer"><img class="social-icon-img" src="images/icons/facebook.svg" alt="Facebook Logo"></a>
-      <!-- 如果還有其他社群可以繼續加 -->
     </div>
-    
     <p class="copyright">© 2026 XXXX Studio</p>
     <a href="privacy.html" class="privacy-link">Privacy Policy</a>
 </footer>
-    </div>
 
-</script>
+<!-- 1. 關閉所有容器 -->
+</div> <!-- 關閉 column (如果有) -->
+</div> <!-- 關閉 container -->
+
+<!-- 2. 引入 SimpleLightbox (左右滑動必備) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 <script src="https://cdnjs.cloudflare.com"></script>
+
 <script>
-    // 初始化燈箱：讓有 .gallery-link 的圖片可以左右連動
+    // 3. 初始化燈箱：這會自動抓取 data-gallery 進行分組
     var lightbox = new SimpleLightbox('.gallery-link', {
-        /* 設定細節 */
-        overlayOpacity: 0.8,
-        uniqueImages: true,
-        close: true,
-        showCounter: true, // 顯示 1/5 這種頁數
-        animationSpeed: 250,
-        loop: true // 到底了自動回第一張
+        overlayOpacity: 0.9,
+        swipeClose: true,
+        showCounter: true,
+        fadeSpeed: 200,
+        uniqueImages: false // 允許同一個年份內切換
     });
+
+    // 4. 原有的年份摺疊功能
+    function toggleYear(yearId) {
+        const content = document.getElementById(yearId);
+        const btn = event.currentTarget;
+        const arrow = btn.querySelector('.arrow');
+        
+        content.classList.toggle('hidden');
+        btn.classList.toggle('active-year');
+        
+        if (content.classList.contains('hidden')) {
+            arrow.style.transform = 'rotate(-90deg)';
+        } else {
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
 </script>
 
 </body>
-    
-<!-- 1. 引入燈箱的樣式與功能 (放在 </body> 之前) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net">
-<script src="https://cdn.jsdelivr.net"></script>
-
-<script>
-  // 2. 啟動魔法：讓所有 class 為 "zoom-img" 的圖片都能點擊放大
-  new LuminousGallery(document.querySelectorAll(".zoom-img"));
-
-    function toggleYear(yearId) {
-    const content = document.getElementById(yearId);
-    // 找到點擊的那個按鈕本身
-    const btn = event.currentTarget;
-    const arrow = btn.querySelector('.arrow');
-    
-    // 1. 切換內容的隱藏/顯示
-    content.classList.toggle('hidden');
-    
-    // 2. 同步切換按鈕的「水藍色」狀態
-    btn.classList.toggle('active-year');
-    
-    // 3. 控制箭頭旋轉
-    if (content.classList.contains('hidden')) {
-        arrow.style.transform = 'rotate(-90deg)';
-    } else {
-        arrow.style.transform = 'rotate(0deg)';
-    }
-}
-
-</script>
-    
 </html>
