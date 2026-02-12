@@ -32,12 +32,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- 返回小圓鈕 -->
-        <nav style="text-align: left; margin-bottom: 25px;">
-            <a href="index.html" class="social-circle back-home-btn" aria-label="Back to Home">
-                <span style="font-size: 20px; position: relative; top: -1px;">⌂</span>
-            </a>
-        </nav>
 
         <h1 class="wish-page-h1">Order Guide</h1>
         <p style="margin-bottom: 35px; color: #7373B9;">XXXXXXX XXX XXXXX</p>
@@ -212,5 +206,38 @@
         }
     }
     </script>
+
+    <!-- 1. 懸浮選單按鈕 -->
+<div class="fab-wrapper">
+    <!-- 平時只顯示一個星雲符號 -->
+    <button class="fab-main" onclick="toggleFab()">
+        <span class="fab-icon">✧</span>
+    </button>
+    
+    <!-- 展開後的菜單 -->
+    <div class="fab-menu" id="fabMenu">
+        <a href="index.html" class="fab-item">Home</a>
+        <a href="guide.html" class="fab-item">Order Guide</a>
+        <a href="collection.html" class="fab-item">The Archive</a>
+        <a href="wish.html" class="fab-item">Make a Wish</a>
+    </div>
+</div>
+
+<script>
+    // 雖然這頁沒有 toggleYear，但我們要這段來讓選單彈出來
+    function toggleFab() {
+        const menu = document.getElementById('fabMenu');
+        menu.classList.toggle('show');
+        
+        // 讓主按鈕點擊時旋轉一下 (變換為 × 的感覺)
+        const mainBtn = document.querySelector('.fab-main');
+        if(menu.classList.contains('show')) {
+            mainBtn.style.transform = 'rotate(45deg) scale(1.1)';
+        } else {
+            mainBtn.style.transform = 'rotate(0) scale(1)';
+        }
+    }
+</script>
+    
 </body>
 </html>
