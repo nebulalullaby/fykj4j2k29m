@@ -80,42 +80,43 @@
         </div>
     </div>
 </div>
-
 <!-- 以後增加 2025 或 2027，只需複製上面這段並改 ID 即可 -->
 
-        <!-- 年份分類區塊：2025 -->
+<!-- 年份分類區塊：2025 -->
 <div class="year-section">
     <!-- 點擊這個按鈕會打開/關閉下面的圖片 -->
-    <button class="year-toggle" onclick="toggleYear('year2025')">
+    <button class="year-toggle active-year" onclick="toggleYear('year2025')">
         <span>2025 Collection</span>
-        <span class="arrow" style="transform: rotate(-90deg);">⇣</span>
+        <span class="arrow">⇣</span>
     </button>
 
-    <!-- 圖片內容區：預設是關閉的 -->
-    <div id="year2025" class="year-content hidden">
+    <!-- 圖片內容區：預設是打開的 -->
+    <div id="year2025" class="year-content">
         <div class="guide-text" style="margin-top: 10px; padding: 20px !important;">
-        <div class="gallery-grid">
-            <!-- 這裡放妳之前的圖片區塊 -->
             <div class="gallery-item">
-                <a href="images/IMG_9097.PNG" class="zoom-img">
-                    <div class="img-wrapper"><img src="images/IMG_9097.PNG"></div>
-                </a>
-                <span>XXXXXXXX - XXXX</span>
-            </div>
+                
+    <!-- 關鍵：加上 data-gallery 讓燈箱知道這些圖是一組的，可以左右滑 -->
+    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
+        <div class="img-wrapper">
+            <img src="images/IMG_9097.PNG" alt=“XXXX”>
+        </div>
+    </a>
+    <span>XXXXXXXX - XXXX</span>
+</div>
             <!-- 可以繼續加更多 2025 的圖 -->
-            <!-- 這裡放妳之前的圖片區塊 -->
             <div class="gallery-item">
-                <a href="images/IMG_9097.PNG" class="zoom-img">
-                    <div class="img-wrapper"><img src="images/IMG_9097.PNG"></div>
-                </a>
-                <span>XXXXXXXX - XXXX</span>
-            </div>
-            <!-- 可以繼續加更多 2025 的圖 -->
+    <a href="images/IMG_9097.PNG" class="gallery-link" data-gallery="2025">
+        <div class="img-wrapper">
+            <img src="images/IMG_9097.PNG" alt=“XXXX”>
+        </div>
+    </a>
+    <span>XXXXXXXX - XXXX</span>
+</div>
+            <!-- 可以繼續加更多 2026 的圖 -->
             </div>
         </div>
     </div>
 </div>
-
 <!-- 以後增加 2025 或 2027，只需複製上面這段並改 ID 即可 -->
 
 <footer class="footer">
