@@ -201,6 +201,75 @@ p {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
+/* 1. 療癒系星空按鈕基礎 */
+.special-starry-btn {
+    position: relative;
+    padding: 14px 40px;
+    background: rgba(20, 20, 45, 0.4) !important; /* 深邃宇宙底色 */
+    color: #fdfbfb !important; /* 暖白色文字，確保可讀性 */
+    border-radius: 50px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 2px;
+    transition: transform 0.5s ease;
+}
+
+/* 2. 第一層：遠景星空（小而暗，慢速旋轉 8秒） */
+.special-starry-btn::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 40px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 40px, rgba(153, 214, 255, 0.8), rgba(0,0,0,0)), /* 藍白星 */
+        radial-gradient(1.2px 1.2px at 80px 120px, rgba(255, 220, 150, 0.6), rgba(0,0,0,0)); /* 暖金星 */
+    background-size: 200px 200px;
+    opacity: 0.4;
+    animation: starryRotate 8s linear infinite;
+    z-index: -2;
+}
+
+/* 3. 第二層：近景星光（大而亮，帶暈光，中速旋轉 5秒） */
+.special-starry-btn::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background-image: 
+        radial-gradient(2px 2px at 50px 100px, #fff, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 150px 200px, rgba(255, 220, 150, 0.5), rgba(0,0,0,0)), /* 暖金暈光 */
+        radial-gradient(2.5px 2.5px at 250px 50px, rgba(153, 214, 255, 0.4), rgba(0,0,0,0)); /* 藍白暈光 */
+    background-size: 300px 300px;
+    opacity: 0.6;
+    filter: blur(0.5px); /* 輕微模糊營造深度 */
+    animation: starryRotate 5s linear infinite reverse; /* 反向旋轉產生視差 */
+    z-index: -1;
+}
+
+/* 4. 旋轉動畫 */
+@keyframes starryRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 5. 外圍呼吸暈光 */
+.special-starry-btn {
+    box-shadow: 0 0 15px rgba(115, 115, 185, 0.2);
+    animation: buttonBreath 4s ease-in-out infinite;
+}
+
+@keyframes buttonBreath {
+    0%, 100% { box-shadow: 0 0 10px rgba(115, 115, 185, 0.2); transform: scale(1); }
+    50% { box-shadow: 0 0 25px rgba(153, 214, 255, 0.3); transform: scale(1.02); }
+}
+
 /* 社交媒體橫排小圓區 */
 .social-icons-row {
     display: flex;
