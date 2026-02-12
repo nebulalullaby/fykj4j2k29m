@@ -32,13 +32,6 @@
 </head>
 <body>
     <div class="container" style="max-width: 500px;"> <!-- 相簿頁寬度微調 -->
-        
-        <nav style="text-align: left; margin-bottom: 25px;">
-    <!-- 這裡改用小圓圈樣式，符號使用 ⌂ (House) -->
-    <a href="index.html" class="social-circle back-home-btn" aria-label="Back to Home">
-        <span style="font-size: 20px; position: relative; top: -1px;">⌂</span>
-    </a>
-        </nav>
  
         <h1 style="font-size: 24px; margin-bottom: 10px;">The Archive</h1>
         <p style="margin-bottom: 40px;">Archive Collection</p>
@@ -225,6 +218,37 @@ groupNames.forEach(name => {
             arrow.style.transform = 'rotate(0deg)';
         }
     }
+
+    function toggleFab() {
+    const menu = document.getElementById('fabMenu');
+    menu.classList.toggle('show');
+    
+    // 讓主按鈕點擊時旋轉一下
+    const mainBtn = document.querySelector('.fab-main');
+    if(menu.classList.contains('show')) {
+        mainBtn.style.transform = 'rotate(45deg) scale(1.1)';
+    } else {
+        mainBtn.style.transform = 'rotate(0) scale(1)';
+    }
+}
+    
 </script>
+
+    <!-- 1. 懸浮選單按鈕 -->
+<div class="fab-wrapper">
+    <!-- 平時只顯示一個星雲符號 -->
+    <button class="fab-main" onclick="toggleFab()">
+        <span class="fab-icon">✧</span>
+    </button>
+    
+    <!-- 展開後的菜單 -->
+    <div class="fab-menu" id="fabMenu">
+        <a href="index.html" class="fab-item">Home</a>
+        <a href="guide.html" class="fab-item">Order Guide</a>
+        <a href="collection.html" class="fab-item">The Archive</a>
+        <a href="wish.html" class="fab-item">Make a Wish</a>
+    </div>
+</div>
+    
 </body>
 </html>
