@@ -434,3 +434,16 @@ p {
     margin-left: 0 !important;
     margin-right: auto !important;
 }
+
+/* 燈箱背景：半透明深色，帶有模糊感 */
+.simple-lightbox-overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+/* 彈出的大圖：帶有微小圓角 */
+.simple-lightbox-image {
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(115, 115, 185, 0.3);
+}
