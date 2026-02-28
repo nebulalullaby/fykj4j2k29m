@@ -613,39 +613,27 @@ p {
 
 /* --- SimpleLightbox 標題美化：冰糖懸浮圓角卡片 --- */
 
-/* 1. 調整標題框本體 */
+/* 強制標題框達成與圖片相同的圓角與寬度 */
 .sl-wrapper .sl-caption {
-    /* 核心：寬度與圓角同步 .img-wrapper (20px) */
-    width: 80% !important;
-    max-width: 350px;
-    margin: 0 auto !important;
-    
-    /* 位置：向上浮動，進入圖片區域下方 */
-    position: relative !important;
-    bottom: 50px !important; 
-    
-    /* 圓角：四邊全圓角，營造漂浮卡片感 */
+    /* 1. 圓角設定：同步你的 .img-wrapper 數值 */
     border-radius: 20px !important; 
     
-    /* 質感：繼承妳的 guide-text 冰糖墊片風格 */
-    background: rgba(255, 255, 255, 0.4) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    /* 2. 寬度與置中：讓它縮短，看起來才會像「跟著圖片走」 */
+    width: 80% !important;
+    max-width: 400px;
+    margin: 0 auto 30px auto !important; 
     
-    /* 邊框與陰影：呼應主板子的 1.5px 邊框 */
-    border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 10px 25px rgba(115, 115, 185, 0.15) !important;
+    /* 3. 位置微調：讓它浮起來，貼近圖片底部 */
+    position: relative !important;
+    bottom: 40px !important; 
 
-    /* 文字樣式：同步妳的 h1 紫色 */
+    /* 4. 移除背景顏色限制，確保圓角不被切掉 */
+    background: rgba(255, 255, 255, 0.8) !important; 
+    overflow: hidden !important;
     color: #ffffff !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    letter-spacing: 1px !important;
-    padding: 12px 15px !important;
-    text-align: center !important;
 }
 
-/* 2. 移除插件原本的底部黑色背景，確保透明感 */
+/* 移除 SimpleLightbox 預設的底部黑條背景 */
 .sl-caption.pos-bottom {
     background: transparent !important;
 }
