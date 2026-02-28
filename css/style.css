@@ -618,15 +618,6 @@ p {
     /* 1. 圓角設定：同步你的 .img-wrapper 數值 */
     border-radius: 20px !important; 
     
-    /* 2. 寬度與置中：讓它縮短，看起來才會像「跟著圖片走」 */
-    width: 80% !important;
-    max-width: 400px;
-    margin: 0 auto 30px auto !important; 
-    
-    /* 3. 位置微調：讓它浮起來，貼近圖片底部 */
-    position: relative !important;
-    bottom: 40px !important; 
-
     /* 4. 移除背景顏色限制，確保圓角不被切掉 */
     background: rgba(255, 255, 255, 0.8) !important; 
     overflow: hidden !important;
