@@ -50,7 +50,7 @@
                 <!-- 第一組第一張作品 -->
                 <div class="gallery-item">
                     <!-- 🔑 關鍵 2：使用 gallery-link，且引號全為半型 -->
-                    <a href="images/background.webp" class="gallery-link" data-gallery="2026 A" data-caption="XXXXXXXXX有上衣、褲子、外套、領帶、鞋子，共5點。<br>12223333334433333333311111212222222222222221111111111111">
+                    <a href="images/background.webp" class="gallery-link" data-gallery="2026 A" title="XXXXXXXXX有上衣、褲子、外套、領帶、鞋子，共5點。<br>12223333334433333333311111212222222222222221111111111111">
                         <div class="img-wrapper">
                             <img src="images/background.webp" alt="A面">
                         </div>
@@ -199,7 +199,16 @@ groupNames.forEach(name => {
         // 🔑 關鍵：如果圖片讀取超過 5 秒還沒出來，允許客人操作
         alertError: false,       // 不跳出醜醜的錯誤視窗
         history: false           // 避免網址列混亂
+
+        /* 🚀 這裡就是新增的標題設定 🚀 */
+        captions: true,           // 開啟標題功能
+        captionSelector: 'self',  // 告訴它標題就在 <a> 標籤自己身上
+        captionType: 'title',     // 讀取 <a> 標籤裡的 title="..."
+        captionPosition: 'bottom',// 顯示在底部
+        captionDelay: 250         // 延遲 250 毫秒顯示，效果更滑順
     });
+
+    
 });
 
 });
