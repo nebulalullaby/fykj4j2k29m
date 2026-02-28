@@ -180,26 +180,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 2. 針對每一個組別，單獨啟動一個燈箱實例
 // 針對每一組 A, B 系列單獨啟動
+// 針對每一組 A, B 系列單獨啟動
 groupNames.forEach(name => {
-    new SimpleLightbox(`.gallery-link[data-gallery="${name}"]`, {
-        overlayOpacity: 0.9,
-        uniqueImages: false,
-        swipeClose: true,     // 支援手機下滑關閉
-        showCounter: true,
-        loop: true,
-        
-        /* 🚀 核心修正：防止圖片讀取失敗時卡死 */
-        fileExt: 'png|jpg|jpeg|gif|webp', // 確保副檔名正確
-        close: true,                      // 顯示右上角 X
-        closeText: '×',
-        
-        // 🔑 關鍵：點擊黑色背景區域（Overlay）立即關閉，不論圖片是否讀到
-        overlayClickClose: true, 
-        
-        // 🔑 關鍵：如果圖片讀取超過 5 秒還沒出來，允許客人操作
-        alertError: false,       // 不跳出醜醜的錯誤視窗
-        history: false           // 避免網址列混亂
-    });
+    try {
+        new SimpleLightbox(`.gallery-link[data-gallery="${name}"]`, {
+            overlayOpacity: 0.9,
+            uniqueImages: false,
+            swipeClose: true,
+            showCounter: true,
+            loop: true,
+            fileExt: 'png|jpg|jpeg|gif|webp',
+            close: true,
+            closeText: '×',
+            overlayClickClose: true, 
+            alertError: false,
+            history: false,
+            /* 🚀 標題設定開始 */
+            captions: true,
+            captionSelector: 'self',
+            captionType: 'title',
+            captionPosition: 'bottom',
+            captionDelay: 250
+            /* 🚀 標題設定結束 */
+        });
+    } catch (e) {
+        console.error("SimpleLightbox 初始化失敗:", e);
+    }
 });
 
 });
