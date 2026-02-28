@@ -628,3 +628,20 @@ p {
 .sl-caption.pos-bottom {
     background: transparent !important;
 }
+
+/* 1. 將圖片左上角的計數器 (1/2, 2/2) 改為白色 */
+.sl-wrapper .sl-counter {
+    color: #ffffff !important;      /* 強制變為純白 */
+    font-size: 14px !important;     /* 稍微放大一點點，方便閱讀 */
+    font-weight: 500 !important;
+    top: 20px !important;           /* 離頂部距離 */
+    left: 20px !important;          /* 離左側距離 */
+    
+    /* 加入一點點發光陰影，確保在淺色背景下也能看清 */
+    text-shadow: 0 0 10px rgba(115, 115, 185, 0.8), 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    
+    /* 可選：如果想要更精緻，可以加一個淡淡的玻璃底座 */
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* padding: 5px 12px; */
+    /* border-radius: 20px; */
+}
