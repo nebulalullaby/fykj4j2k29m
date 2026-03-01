@@ -617,6 +617,7 @@ p {
 .sl-wrapper .sl-caption {
     /* 1. 圓角設定：同步你的 .img-wrapper 數值 */
     border-radius: 20px !important; 
+    font-size: 12px !important;
     
     /* 4. 移除背景顏色限制，確保圓角不被切掉 */
     background: rgba(255, 255, 255, 0.8) !important; 
