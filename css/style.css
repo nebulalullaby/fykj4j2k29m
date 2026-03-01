@@ -617,7 +617,7 @@ p {
 .sl-wrapper .sl-caption {
     /* 1. 圓角設定：同步你的 .img-wrapper 數值 */
     border-radius: 20px !important; 
-    font-size: 12px !important;
+    font-size: 13px !important;
     
     /* 4. 移除背景顏色限制，確保圓角不被切掉 */
     background: rgba(255, 255, 255, 0.8) !important; 
@@ -633,7 +633,7 @@ p {
 /* 1. 將圖片左上角的計數器 (1/2, 2/2) 改為白色 */
 .sl-wrapper .sl-counter {
     color: #ffffff !important;      /* 強制變為純白 */
-    font-size: 12px !important;     /* 稍微放大一點點，方便閱讀 */
+    font-size: 13px !important;     /* 稍微放大一點點，方便閱讀 */
     font-weight: 500 !important;
     top: 30px !important;           /* 離頂部距離 */
     left: 30px !important;          /* 離左側距離 */
