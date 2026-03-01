@@ -634,8 +634,8 @@ p {
     color: #ffffff !important;      /* 強制變為純白 */
     font-size: 14px !important;     /* 稍微放大一點點，方便閱讀 */
     font-weight: 500 !important;
-    top: 20px !important;           /* 離頂部距離 */
-    left: 20px !important;          /* 離左側距離 */
+    top: 30px !important;           /* 離頂部距離 */
+    left: 30px !important;          /* 離左側距離 */
     
     /* 加入一點點發光陰影，確保在淺色背景下也能看清 */
     text-shadow: 0 0 10px rgba(115, 115, 185, 0.8), 0 2px 4px rgba(0, 0, 0, 0.2) !important;
