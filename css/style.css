@@ -632,7 +632,7 @@ p {
 /* 1. 將圖片左上角的計數器 (1/2, 2/2) 改為白色 */
 .sl-wrapper .sl-counter {
     color: #ffffff !important;      /* 強制變為純白 */
-    font-size: 14px !important;     /* 稍微放大一點點，方便閱讀 */
+    font-size: 12px !important;     /* 稍微放大一點點，方便閱讀 */
     font-weight: 500 !important;
     top: 30px !important;           /* 離頂部距離 */
     left: 30px !important;          /* 離左側距離 */
